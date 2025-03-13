@@ -1,0 +1,23 @@
+{
+    "inference_server": {
+        "base_url": "https://api.openai.com/v1",
+        "api_key": "your-api-key"
+     },
+    "sampling": {
+        "timeout": 10,
+        "models": [
+            {
+                "model": "llama3.2:latest",
+                "intelligence": 0.5,
+                "cost": 0,
+                "speed": 0.6
+            },
+            {
+                "model": "gpt-4o",
+                "intelligence": 0.8,
+                "cost": 0.9,
+                "speed": 0.3
+            }
+        ]
+    }
+  }

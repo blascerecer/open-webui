@@ -1,0 +1,47 @@
+replicaCount: 1
+
+image:
+  repository: ghcr.io/secretiveshell/mcp-bridge/mcp-bridge
+  pullPolicy: Always
+  tag: 0.1.0
+
+service:
+  type: ClusterIP
+  port: 9090
+
+config:
+  inferenceServer:
+    baseUrl: ""
+    apiKey: ""
+  network:
+    host: "0.0.0.0"
+    port: 9090
+  logging:
+    logLevel: "DEBUG"
+
+mcp_config:
+  mcpServers: {}
+
+# Example of how to add MCP servers
+#   mcpServers:
+#     mcp-k8s:
+#       command: "mcp-k8s"
+#       args: []
+#     fetch:
+#       command: "uvx"
+#       args: ["mcp-server-fetch"]
+#     custom-server:
+#       command: "custom-command"
+#       args: ["arg1", "arg2"]
+
+resources:
+  limits:
+    cpu: 500m
+    memory: 512Mi
+  requests:
+    cpu: 200m
+    memory: 256Mi
+
+podAnnotations: {}
+
+podLabels: {}

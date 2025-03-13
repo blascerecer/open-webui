@@ -1,0 +1,23 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "mcp-bridge.fullname" . }}-config
+data:
+  config.json: |
+    {
+      "inference_server": {
+        "base_url": {{ .Values.config.inferenceServer.baseUrl | quote }},
+        "api_key": {{ .Values.config.inferenceServer.apiKey | quote }}
+      },
+      "network": {
+        "host": {{ .Values.config.network.host | default "0.0.0.0" | quote }},
+        "port": {{ .Values.config.network.port | default 9090 }}
+      },
+      "logging": {
+        "log_level": {{ .Values.config.logging.logLevel | default "DEBUG" | quote }}
+      }
+    }
+  mcp_config.json: |
+    {
+      "mcp_servers": {{ .Values.mcp_config.mcpServers | toJson }}
+    }
