@@ -1,8 +1,12 @@
+I'll modify the README to include the video link that shows how to set up the system. Here's the updated version:
+
 # Open WebUI with MCP Access
 
 This repository provides Open WebUI with MCP (Model Control Protocol) bridge access to connect with various AI models.
 
 ## Quick Setup Guide
+
+Watch our setup video tutorial: [https://www.youtube.com/watch?v=F0bI2RsuzMI](https://www.youtube.com/watch?v=F0bI2RsuzMI)
 
 ### 1. Configuration Steps
 
