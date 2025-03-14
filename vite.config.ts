@@ -24,7 +24,6 @@ export default defineConfig({
 			targets: [
 				{
 					src: 'node_modules/onnxruntime-web/dist/*.jsep.*',
-
 					dest: 'wasm'
 				}
 			]
@@ -39,5 +38,22 @@ export default defineConfig({
 	},
 	worker: {
 		format: 'es'
+	},
+	server: {
+		proxy: {
+			'/smithery-api/registry': {
+				target: 'https://registry.smithery.ai',
+				changeOrigin: true,
+				rewrite: (path) => path.replace(/^\/smithery-api\/registry/, ''),
+				configure: (proxy, _options) => {
+					proxy.on('error', (err, _req, _res) => {
+						console.log('Proxy error:', err);
+					});
+					proxy.on('proxyReq', (proxyReq, req, _res) => {
+						console.log('Proxying request:', req.method, req.url, '→', proxyReq.path);
+					});
+				}
+			}
+		}
 	}
 });

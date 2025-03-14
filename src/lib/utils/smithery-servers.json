@@ -1,0 +1,2508 @@
+{
+    "servers": [
+        {
+            "qualifiedName": "@smithery-ai/server-sequential-thinking",
+            "displayName": "Sequential Thinking",
+            "description": "An MCP server implementation that provides a tool for dynamic and reflective problem-solving through a structured thinking process.",
+            "createdAt": "2024-12-13T15:46:54.490Z",
+            "useCount": 144646,
+            "homepage": "https://smithery.ai/server/@smithery-ai/server-sequential-thinking"
+        },
+        {
+            "qualifiedName": "@smithery-ai/github",
+            "displayName": "Github",
+            "description": "Access the GitHub API, enabling file operations, repository management, search functionality, and more.",
+            "createdAt": "2025-01-18T08:29:52.246Z",
+            "useCount": 35705,
+            "homepage": "https://smithery.ai/server/@smithery-ai/github"
+        },
+        {
+            "qualifiedName": "wcgw",
+            "displayName": "wcgw",
+            "description": "Shell and coding agent on Claude and ChatGPT.",
+            "createdAt": "2024-12-19T16:21:40.302Z",
+            "useCount": 17427,
+            "homepage": "https://smithery.ai/server/wcgw"
+        },
+        {
+            "qualifiedName": "@smithery-ai/brave-search",
+            "displayName": "Brave Search",
+            "description": "Integrate web and local search capabilities.",
+            "createdAt": "2025-01-19T09:46:30.235Z",
+            "useCount": 10839,
+            "homepage": "https://smithery.ai/server/@smithery-ai/brave-search"
+        },
+        {
+            "qualifiedName": "@21st-dev/magic-mcp",
+            "displayName": "Magic MCP",
+            "description": "v0 for MCP. Frontend feels like Magic",
+            "createdAt": "2025-02-19T13:46:40.154Z",
+            "useCount": 8368,
+            "homepage": "https://smithery.ai/server/@21st-dev/magic-mcp"
+        },
+        {
+            "qualifiedName": "@wonderwhy-er/desktop-commander",
+            "displayName": "Desktop Commander",
+            "description": "Execute terminal commands and manage files with editing capabilities.",
+            "createdAt": "2025-01-10T06:39:31.942Z",
+            "useCount": 6764,
+            "homepage": "https://smithery.ai/server/@wonderwhy-er/desktop-commander"
+        },
+        {
+            "qualifiedName": "iterm-mcp",
+            "displayName": "iTerm",
+            "description": "Execute commands in the current iTerm session.",
+            "createdAt": "2025-01-10T06:36:31.110Z",
+            "useCount": 6379,
+            "homepage": "https://smithery.ai/server/iterm-mcp"
+        },
+        {
+            "qualifiedName": "@executeautomation/playwright-mcp-server",
+            "displayName": "Playwright",
+            "description": "Provides browser automation capabilities using Playwright, enabling LLMs to interact with web pages, take screenshots, and execute JavaScript in a browser environment.",
+            "createdAt": "2024-12-13T15:46:51.352Z",
+            "useCount": 5110,
+            "homepage": "https://smithery.ai/server/@executeautomation/playwright-mcp-server"
+        },
+        {
+            "qualifiedName": "neon",
+            "displayName": "Neon Database",
+            "description": "Control Neon serverless Postgres databases using natural language. Create and manage databases, run SQL queries, handle migrations, and manage projects.",
+            "createdAt": "2024-12-13T15:46:59.311Z",
+            "useCount": 1873,
+            "homepage": "https://smithery.ai/server/neon"
+        },
+        {
+            "qualifiedName": "@Deploya-labs/mcp-supabase",
+            "displayName": "Supabase MCP Server (used by Deploya.dev)",
+            "description": "Manage your Supabase databases and execute SQL queries autonomously and securely. Leverage built-in safety controls while interacting with your database through Cursor and Windsurf. Simplify your database management with a feature-rich interface that enhances productivity.",
+            "createdAt": "2025-03-06T03:31:56.038Z",
+            "useCount": 3340,
+            "homepage": "https://smithery.ai/server/@Deploya-labs/mcp-supabase"
+        },
+        {
+            "qualifiedName": "@smithery-ai/fetch",
+            "displayName": "Fetch",
+            "description": "A simple tool that performs a fetch request to a webpage.",
+            "createdAt": "2025-01-13T13:58:43.896Z",
+            "useCount": 3138,
+            "homepage": "https://smithery.ai/server/@smithery-ai/fetch"
+        },
+        {
+            "qualifiedName": "obsidian-mcp",
+            "displayName": "Obsidian",
+            "description": "MCP server for AI assistants to interact with Obsidian vaults.",
+            "createdAt": "2024-12-24T02:43:19.293Z",
+            "useCount": 2904,
+            "homepage": "https://smithery.ai/server/obsidian-mcp"
+        },
+        {
+            "qualifiedName": "@browserbasehq/mcp-browserbase",
+            "displayName": "Browserbase",
+            "description": "Provides cloud browser automation capabilities using Browserbase, enabling LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+            "createdAt": "2024-12-13T15:47:00.443Z",
+            "useCount": 1394,
+            "homepage": "https://smithery.ai/server/@browserbasehq/mcp-browserbase"
+        },
+        {
+            "qualifiedName": "e2b",
+            "displayName": "E2B",
+            "description": "Add code execution and interpreting capabilities to your agents.",
+            "createdAt": "2024-12-13T15:47:01.006Z",
+            "useCount": 1135,
+            "homepage": "https://smithery.ai/server/e2b"
+        },
+        {
+            "qualifiedName": "@kazuph/mcp-taskmanager",
+            "displayName": "TaskManager",
+            "description": "Model Context Protocol server for Task Management, allowing Claude Desktop (or any MCP client) to manage and execute tasks in a queue-based system.",
+            "createdAt": "2024-12-27T11:52:19.012Z",
+            "useCount": 2258,
+            "homepage": "https://smithery.ai/server/@kazuph/mcp-taskmanager"
+        },
+        {
+            "qualifiedName": "@VeyraX/veyrax-mcp",
+            "displayName": "VeyraX MCP",
+            "description": "Single MCP tool to connect all your favorite tools: Gmail, Calendar and 20 more. ",
+            "createdAt": "2025-03-04T22:30:07.581Z",
+            "useCount": 2215,
+            "homepage": "https://smithery.ai/server/@VeyraX/veyrax-mcp"
+        },
+        {
+            "qualifiedName": "@abhiz123/todoist-mcp-server",
+            "displayName": "Todoist MCP Server",
+            "description": "MCP server for Todoist API integration",
+            "createdAt": "2024-12-19T15:42:53.273Z",
+            "useCount": 2164,
+            "homepage": "https://smithery.ai/server/@abhiz123/todoist-mcp-server"
+        },
+        {
+            "qualifiedName": "exa",
+            "displayName": "Exa",
+            "description": "Bring knowledge to your AI via the Exa Search API for real-time semantic web searches.",
+            "createdAt": "2024-12-13T15:46:50.750Z",
+            "useCount": 1040,
+            "homepage": "https://smithery.ai/server/exa"
+        },
+        {
+            "qualifiedName": "mcp-server-sqlite-npx",
+            "displayName": "SQLite Server",
+            "description": "A Node.js implementation of the Model Context Protocol SQLite server, providing an npx-based alternative for environments lacking Python's UVX runner.",
+            "createdAt": "2024-12-28T13:29:47.587Z",
+            "useCount": 1759,
+            "homepage": "https://smithery.ai/server/mcp-server-sqlite-npx"
+        },
+        {
+            "qualifiedName": "@smithery-ai/filesystem",
+            "displayName": "Filesystem MCP Server",
+            "description": "Node.js server for filesystem operations, including reading/writing files and managing directories.",
+            "createdAt": "2024-12-13T15:46:55.057Z",
+            "useCount": 1609,
+            "homepage": "https://smithery.ai/server/@smithery-ai/filesystem"
+        },
+        {
+            "qualifiedName": "@itseasy21/mcp-knowledge-graph",
+            "displayName": "Knowledge Graph Memory Server",
+            "description": "Enable Claude/Cursor to remember user information across chats using a local knowledge graph.",
+            "createdAt": "2025-02-25T03:36:33.005Z",
+            "useCount": 1580,
+            "homepage": "https://smithery.ai/server/@itseasy21/mcp-knowledge-graph"
+        },
+        {
+            "qualifiedName": "@showfive/playwright-mcp-server",
+            "displayName": "Playwright",
+            "description": "Control browsers and automate web interactions seamlessly.",
+            "createdAt": "2025-02-09T04:00:16.589Z",
+            "useCount": 1474,
+            "homepage": "https://smithery.ai/server/@showfive/playwright-mcp-server"
+        },
+        {
+            "qualifiedName": "@tiovikram/linear-mcp",
+            "displayName": "Linear MCP Server",
+            "description": "Interact with Linear's API to manage issues, projects, and teams programmatically.",
+            "createdAt": "2025-02-27T05:00:29.661Z",
+            "useCount": 1437,
+            "homepage": "https://smithery.ai/server/@tiovikram/linear-mcp"
+        },
+        {
+            "qualifiedName": "notion-api-mcp",
+            "displayName": "Notion API",
+            "description": "Integrate and manage Notion databases and tasks using Notion's API.",
+            "createdAt": "2025-01-15T05:49:16.058Z",
+            "useCount": 1376,
+            "homepage": "https://smithery.ai/server/notion-api-mcp"
+        },
+        {
+            "qualifiedName": "@emmett-deen/linear-mcp-server",
+            "displayName": "Linear MCP Server",
+            "description": "Connect Claude to Linear project management systems. Retrieve, create, and manage issues and projects seamlessly.",
+            "createdAt": "2025-02-28T15:12:24.831Z",
+            "useCount": 1341,
+            "homepage": "https://smithery.ai/server/@emmett-deen/linear-mcp-server"
+        },
+        {
+            "qualifiedName": "@f4ww4z/mcp-mysql-server",
+            "displayName": "MySQL Server",
+            "description": "A Model Context Protocol server for MySQL database operations.",
+            "createdAt": "2024-12-20T08:53:24.542Z",
+            "useCount": 1266,
+            "homepage": "https://smithery.ai/server/@f4ww4z/mcp-mysql-server"
+        },
+        {
+            "qualifiedName": "mcp-obsidian",
+            "displayName": "Obsidian Reader",
+            "description": "Read and search within a directory of Markdown notes in an Obsidian vault.",
+            "createdAt": "2024-12-13T15:46:49.049Z",
+            "useCount": 1262,
+            "homepage": "https://smithery.ai/server/mcp-obsidian"
+        },
+        {
+            "qualifiedName": "@mzxrai/mcp-webresearch",
+            "displayName": "Web Research",
+            "description": "Augments your LLM so it can perform research better. Provides Google search integration, webpage content extraction, research session tracking and more.",
+            "createdAt": "2024-12-20T09:00:24.744Z",
+            "useCount": 1171,
+            "homepage": "https://smithery.ai/server/@mzxrai/mcp-webresearch"
+        },
+        {
+            "qualifiedName": "sequential-thinking",
+            "displayName": "Sequential Thinking",
+            "description": "Enhances problem-solving by breaking down problems into sequential steps.",
+            "createdAt": "2025-01-10T06:38:59.614Z",
+            "useCount": 1076,
+            "homepage": "https://smithery.ai/server/sequential-thinking"
+        },
+        {
+            "qualifiedName": "mcp-server-qdrant",
+            "displayName": "Qdrant Server",
+            "description": "A semantic memory layer that stores and retrieves information using the Qdrant vector search engine. It enables storing memories and finding relevant information through semantic search.",
+            "createdAt": "2024-12-13T15:46:59.636Z",
+            "useCount": 524,
+            "homepage": "https://smithery.ai/server/mcp-server-qdrant"
+        },
+        {
+            "qualifiedName": "@alexander-zuev/supabase-mcp-server",
+            "displayName": "Supabase MCP Server",
+            "description": "Let Cursor & Windsurf manage your Supabase and run SQL queries. Autonomously. In a safe way.",
+            "createdAt": "2025-02-16T02:00:28.326Z",
+            "useCount": 1004,
+            "homepage": "https://smithery.ai/server/@alexander-zuev/supabase-mcp-server"
+        },
+        {
+            "qualifiedName": "@Chrusic/todoist-mcp-server-extended",
+            "displayName": "Todoist-mcp-server-extended",
+            "description": "Integrate natural language task management with Todoist. Manage tasks, projects, and labels effortlessly using everyday language.",
+            "createdAt": "2025-02-14T01:00:30.153Z",
+            "useCount": 945,
+            "homepage": "https://smithery.ai/server/@Chrusic/todoist-mcp-server-extended"
+        },
+        {
+            "qualifiedName": "@ai-zerolab/mcp-figma",
+            "displayName": "Figma API Integration",
+            "description": "Access Figma's powerful API to manage files, comments, and components seamlessly. Enhance your AI assistant's capabilities by integrating Figma functionalities directly into your workflows. Simplify your design collaboration and project management with easy API access.",
+            "createdAt": "2025-03-03T11:47:42.975Z",
+            "useCount": 859,
+            "homepage": "https://smithery.ai/server/@ai-zerolab/mcp-figma"
+        },
+        {
+            "qualifiedName": "@arjunkmrm/perplexity-search",
+            "displayName": "Perplexity Search MCP",
+            "description": "Enable AI assistants to perform web searches using Perplexity's Sonar Pro.",
+            "createdAt": "2025-02-28T09:47:24.738Z",
+            "useCount": 813,
+            "homepage": "https://smithery.ai/server/@arjunkmrm/perplexity-search"
+        },
+        {
+            "qualifiedName": "@smithery-ai/postgres",
+            "displayName": "PostgreSQL MCP Server",
+            "description": "A Model Context Protocol server that provides read-only access to PostgreSQL databases. This server enables LLMs to inspect database schemas and execute read-only queries.",
+            "createdAt": "2024-12-13T15:46:53.911Z",
+            "useCount": 808,
+            "homepage": "https://smithery.ai/server/@smithery-ai/postgres"
+        },
+        {
+            "qualifiedName": "@smithery-ai/puppeteer",
+            "displayName": "Puppeteer Browser",
+            "description": "Browser automation server that enables interaction with web pages, taking screenshots, and executing JavaScript in a real browser environment",
+            "createdAt": "2024-12-13T15:46:59.882Z",
+            "useCount": 783,
+            "homepage": "https://smithery.ai/server/@smithery-ai/puppeteer"
+        },
+        {
+            "qualifiedName": "@mendableai/mcp-server-firecrawl",
+            "displayName": "FireCrawl",
+            "description": "MCP server for FireCrawl web scraping integration",
+            "createdAt": "2024-12-19T15:46:56.981Z",
+            "useCount": 758,
+            "homepage": "https://smithery.ai/server/@mendableai/mcp-server-firecrawl"
+        },
+        {
+            "qualifiedName": "@ivotoby/contentful-management-mcp-server",
+            "displayName": "Contentful Management Server",
+            "description": "MCP server for Contentful Content Management API integration, providing full CRUD operations, space, and content-type management.",
+            "createdAt": "2024-12-19T16:27:00.163Z",
+            "useCount": 730,
+            "homepage": "https://smithery.ai/server/@ivotoby/contentful-management-mcp-server"
+        },
+        {
+            "qualifiedName": "linear-mcp-server",
+            "displayName": "Linear MCP Server",
+            "description": "A Model Context Protocol server for the Linear API, enabling LLM interaction with Linear issues.",
+            "createdAt": "2024-12-19T15:43:48.085Z",
+            "useCount": 711,
+            "homepage": "https://smithery.ai/server/linear-mcp-server"
+        },
+        {
+            "qualifiedName": "@gongrzhe/server-gmail-autoauth-mcp",
+            "displayName": "Gmail AutoAuth",
+            "description": "Gmail MCP server with auto authentication support for managing Gmail via AI assistants.",
+            "createdAt": "2024-12-26T11:04:06.206Z",
+            "useCount": 673,
+            "homepage": "https://smithery.ai/server/@gongrzhe/server-gmail-autoauth-mcp"
+        },
+        {
+            "qualifiedName": "@TaazKareem/clickup-mcp-server",
+            "displayName": "ClickUp MCP Server",
+            "description": "Integrate ClickUp tasks with AI applications.",
+            "createdAt": "2025-02-12T03:00:49.629Z",
+            "useCount": 646,
+            "homepage": "https://smithery.ai/server/@TaazKareem/clickup-mcp-server"
+        },
+        {
+            "qualifiedName": "@chuanmingliu/mcp-webresearch",
+            "displayName": "Web Research Server",
+            "description": "Integrate real-time web research capabilities into your workflow. Conduct thorough research with tools for searching, content extraction, and session tracking.",
+            "createdAt": "2025-03-01T16:04:35.754Z",
+            "useCount": 562,
+            "homepage": "https://smithery.ai/server/@chuanmingliu/mcp-webresearch"
+        },
+        {
+            "qualifiedName": "mysql-mcp-server",
+            "displayName": "MySQL Server",
+            "description": "A Model Context Protocol (MCP) server that enables secure interaction with MySQL databases, allowing AI assistants to list tables, read data, and execute SQL queries through a controlled interface.",
+            "createdAt": "2024-12-19T15:32:46.319Z",
+            "useCount": 547,
+            "homepage": "https://smithery.ai/server/mysql-mcp-server"
+        },
+        {
+            "qualifiedName": "jina-ai-mcp-server",
+            "displayName": "Jina AI",
+            "description": "Provides access to Jina AI's web services through Claude, including web page reading, web search, and fact checking.",
+            "createdAt": "2024-12-20T08:44:00.082Z",
+            "useCount": 545,
+            "homepage": "https://smithery.ai/server/jina-ai-mcp-server"
+        },
+        {
+            "qualifiedName": "@negokaz/excel-mcp-server",
+            "displayName": "Excel",
+            "description": "Read and write spreadsheet data to MS Excel files.",
+            "createdAt": "2025-02-18T13:00:16.984Z",
+            "useCount": 462,
+            "homepage": "https://smithery.ai/server/@negokaz/excel-mcp-server"
+        },
+        {
+            "qualifiedName": "@smithery-ai/slack",
+            "displayName": "Slack",
+            "description": "Enable interaction with Slack workspaces.",
+            "createdAt": "2025-01-23T12:11:05.094Z",
+            "useCount": 438,
+            "homepage": "https://smithery.ai/server/@smithery-ai/slack"
+        },
+        {
+            "qualifiedName": "@wopal/mcp-server-hotnews",
+            "displayName": "HotNews Server",
+            "description": "A Model Context Protocol server that provides real-time hot trending topics from major Chinese social platforms and news sites.",
+            "createdAt": "2024-12-22T16:14:54.083Z",
+            "useCount": 430,
+            "homepage": "https://smithery.ai/server/@wopal/mcp-server-hotnews"
+        },
+        {
+            "qualifiedName": "@auchenberg/claude-code-mcp",
+            "displayName": "Claude Code MCP Server",
+            "description": "Leverage powerful software engineering capabilities through a standardized interface. Execute shell commands, analyze code, and manage files seamlessly. Enhance your development workflow with integrated tools and resources.",
+            "createdAt": "2025-03-09T07:01:12.322Z",
+            "useCount": 414,
+            "homepage": "https://smithery.ai/server/@auchenberg/claude-code-mcp"
+        },
+        {
+            "qualifiedName": "mcp-salesforce-connector",
+            "displayName": "Salesforce",
+            "description": "Interact with Salesforce using SOQL and SOSL queries.",
+            "createdAt": "2025-01-10T16:06:28.787Z",
+            "useCount": 392,
+            "homepage": "https://smithery.ai/server/mcp-salesforce-connector"
+        },
+        {
+            "qualifiedName": "@kimtaeyoon83/mcp-server-youtube-transcript",
+            "displayName": "YouTube Transcript Server",
+            "description": "Enables retrieval of transcripts from YouTube videos. Provides direct access to video captions and subtitles through a simple interface, with support for multiple languages and video URL formats.",
+            "createdAt": "2024-12-13T15:46:57.045Z",
+            "useCount": 385,
+            "homepage": "https://smithery.ai/server/@kimtaeyoon83/mcp-server-youtube-transcript"
+        },
+        {
+            "qualifiedName": "@jlia0/servers",
+            "displayName": "Knowledge Graph Memory Server",
+            "description": "Enable your agents to remember user information across chats by utilizing a local knowledge graph. Enhance interactions by creating, updating, and retrieving personalized memories seamlessly. Experience a more engaging and tailored conversation with your AI assistant.",
+            "createdAt": "2025-03-09T13:22:46.319Z",
+            "useCount": 383,
+            "homepage": "https://smithery.ai/server/@jlia0/servers"
+        },
+        {
+            "qualifiedName": "@suekou/mcp-notion-server",
+            "displayName": "Notion Server",
+            "description": "MCP server for interacting with the Notion API, enabling Claude to interact with Notion workspaces.",
+            "createdAt": "2024-12-19T16:09:04.786Z",
+            "useCount": 355,
+            "homepage": "https://smithery.ai/server/@suekou/mcp-notion-server"
+        },
+        {
+            "qualifiedName": "elasticsearch-mcp-server",
+            "displayName": "Elasticsearch Server",
+            "description": "Interact with Elasticsearch for searching documents and managing clusters.",
+            "createdAt": "2025-01-10T06:39:58.399Z",
+            "useCount": 351,
+            "homepage": "https://smithery.ai/server/elasticsearch-mcp-server"
+        },
+        {
+            "qualifiedName": "@Streen9/react-mcp",
+            "displayName": "React MCP",
+            "description": "Enable Claude AI to manage and interact with React applications seamlessly.",
+            "createdAt": "2025-02-26T07:08:20.176Z",
+            "useCount": 348,
+            "homepage": "https://smithery.ai/server/@Streen9/react-mcp"
+        },
+        {
+            "qualifiedName": "@alanse/mcp-neo4j-server",
+            "displayName": "Neo4j Server",
+            "description": "Provides integration with Neo4j graph database for natural language interactions.",
+            "createdAt": "2025-01-05T14:44:02.367Z",
+            "useCount": 337,
+            "homepage": "https://smithery.ai/server/@alanse/mcp-neo4j-server"
+        },
+        {
+            "qualifiedName": "@dragonkhoi/mixpanel-mcp",
+            "displayName": "Mixpanel Integration",
+            "description": "Talk to your Mixpanel analytics events data seamlessly! Query retention number, event data, funnels and more from any MCP client. Great for on-demand look ups like: \"What's the weekly retention for users in the Feb 1 cohort?\"\n\nI am adding more coverage of the Mixpanel API over time, let me know which tools you need or just open a PR.\n\nMake sure you go to your Mixpanel Organization Settings and create a service account. Then get your project ID from your project settings.",
+            "createdAt": "2025-03-01T20:35:09.399Z",
+            "useCount": 335,
+            "homepage": "https://smithery.ai/server/@dragonkhoi/mixpanel-mcp"
+        },
+        {
+            "qualifiedName": "mcp-tavily",
+            "displayName": "Tavily",
+            "description": "An MCP server for Tavily's search API providing AI-powered web search capabilities.",
+            "createdAt": "2024-12-19T15:43:22.067Z",
+            "useCount": 312,
+            "homepage": "https://smithery.ai/server/mcp-tavily"
+        },
+        {
+            "qualifiedName": "@smithery-ai/gitlab",
+            "displayName": "GitLab API Server",
+            "description": "Enable project management and file operations with GitLab.",
+            "createdAt": "2025-01-25T15:09:45.297Z",
+            "useCount": 296,
+            "homepage": "https://smithery.ai/server/@smithery-ai/gitlab"
+        },
+        {
+            "qualifiedName": "fetch-mcp",
+            "displayName": "Fetch MCP Server",
+            "description": "Fetch web content in various formats such as HTML, JSON, plain text, and Markdown.",
+            "createdAt": "2024-12-19T16:20:57.806Z",
+            "useCount": 292,
+            "homepage": "https://smithery.ai/server/fetch-mcp"
+        },
+        {
+            "qualifiedName": "airtable-server",
+            "displayName": "Airtable Server",
+            "description": "An Airtable Model Context Protocol Server enabling programmatic management of Airtable bases, tables, fields, and records.",
+            "createdAt": "2024-12-19T16:08:19.922Z",
+            "useCount": 283,
+            "homepage": "https://smithery.ai/server/airtable-server"
+        },
+        {
+            "qualifiedName": "mcp-server-bigquery",
+            "displayName": "BigQuery Server",
+            "description": "A Model Context Protocol server that provides access to BigQuery, enabling LLMs to inspect database schemas and execute queries.",
+            "createdAt": "2024-12-19T15:33:49.253Z",
+            "useCount": 272,
+            "homepage": "https://smithery.ai/server/mcp-server-bigquery"
+        },
+        {
+            "qualifiedName": "@daniel-lxs/mcp-perplexity",
+            "displayName": "Perplexity Chat MCP Server",
+            "description": "Request expert programming assistance through Perplexity. Streamline your coding solutions and error debugging with interactive responses.",
+            "createdAt": "2025-02-05T16:58:17.160Z",
+            "useCount": 269,
+            "homepage": "https://smithery.ai/server/@daniel-lxs/mcp-perplexity"
+        },
+        {
+            "qualifiedName": "mcp-atlassian",
+            "displayName": "Atlassian Integration",
+            "description": "An MCP server for accessing Atlassian Cloud products (Confluence and Jira) for secure, contextual AI interactions.",
+            "createdAt": "2024-12-20T08:09:37.834Z",
+            "useCount": 263,
+            "homepage": "https://smithery.ai/server/mcp-atlassian"
+        },
+        {
+            "qualifiedName": "@JigsawStack/image-generation",
+            "displayName": "JigsawStack Image Generation",
+            "description": "Generate images from text using advanced AI models. Learn more about jigsawstack's image generation API here: https://jigsawstack.com/docs/api-reference/ai/image-generation\n\nYou can get your jigsawstack API key here: https://jigsawstack.com/dashboard/",
+            "createdAt": "2025-03-04T00:14:56.697Z",
+            "useCount": 127,
+            "homepage": "https://smithery.ai/server/@JigsawStack/image-generation"
+        },
+        {
+            "qualifiedName": "@aindreyway/mcp-codex-keeper",
+            "displayName": "Aindreyway Codex Keeper",
+            "description": "An intelligent server that provides AI assistants with curated access to the latest development documentation and best practices.",
+            "createdAt": "2024-12-23T01:52:02.833Z",
+            "useCount": 249,
+            "homepage": "https://smithery.ai/server/@aindreyway/mcp-codex-keeper"
+        },
+        {
+            "qualifiedName": "@superseoworld/mcp-spotify",
+            "displayName": "Spotify Server",
+            "description": "Access Spotify's music catalog and interact with tracks, albums, and artists.",
+            "createdAt": "2025-01-27T12:00:15.340Z",
+            "useCount": 247,
+            "homepage": "https://smithery.ai/server/@superseoworld/mcp-spotify"
+        },
+        {
+            "qualifiedName": "mcp-server-duckdb",
+            "displayName": "DuckDB Server",
+            "description": "A DuckDB MCP server allowing interaction with DuckDB databases through MCP.",
+            "createdAt": "2024-12-19T16:22:21.703Z",
+            "useCount": 243,
+            "homepage": "https://smithery.ai/server/mcp-server-duckdb"
+        },
+        {
+            "qualifiedName": "@marcopesani/mcp-server-serper",
+            "displayName": "Serper Search and Scrape",
+            "description": "A TypeScript-based MCP server that provides web search and webpage scraping capabilities using the Serper API. This server integrates with Cursor, Cline, Claude Desktop, and any MCP-compatible client to enable powerful web search and content extraction features in one convenient package.",
+            "createdAt": "2025-02-21T00:00:26.004Z",
+            "useCount": 227,
+            "homepage": "https://smithery.ai/server/@marcopesani/mcp-server-serper"
+        },
+        {
+            "qualifiedName": "@smithery-ai/everart",
+            "displayName": "Everart",
+            "description": "Image generation server utilizing EverArt's API with multiple model options for generating images.",
+            "createdAt": "2024-12-13T15:46:52.201Z",
+            "useCount": 223,
+            "homepage": "https://smithery.ai/server/@smithery-ai/everart"
+        },
+        {
+            "qualifiedName": "@Dhravya/apple-mcp",
+            "displayName": "Apple Tools Integration",
+            "description": "Integrate with Apple applications to send and manage messages, emails, notes, contacts, and more.",
+            "createdAt": "2025-02-20T02:01:02.430Z",
+            "useCount": 222,
+            "homepage": "https://smithery.ai/server/@Dhravya/apple-mcp"
+        },
+        {
+            "qualifiedName": "@arjunkmrm/perplexity-deep-research",
+            "displayName": "Perplexity Deep Research",
+            "description": "Enable AI assistants to perform web searches using Perplexity's Deep Research. Note: depending on the client, you might run into connection timeout depending on how long it takes to get response from deep research API. I'm exploring workarounds for this.",
+            "createdAt": "2025-02-27T17:54:29.949Z",
+            "useCount": 216,
+            "homepage": "https://smithery.ai/server/@arjunkmrm/perplexity-deep-research"
+        },
+        {
+            "qualifiedName": "@truss44/mcp-crypto-price",
+            "displayName": "Crypto Price & Market Analysis Server",
+            "description": "Provide real-time cryptocurrency price data and market analysis.",
+            "createdAt": "2025-02-23T03:00:09.766Z",
+            "useCount": 205,
+            "homepage": "https://smithery.ai/server/@truss44/mcp-crypto-price"
+        },
+        {
+            "qualifiedName": "@kazuph/mcp-fetch",
+            "displayName": "MCP Fetch",
+            "description": "A Model Context Protocol server that provides web content fetching capabilities.",
+            "createdAt": "2024-12-27T11:53:24.133Z",
+            "useCount": 199,
+            "homepage": "https://smithery.ai/server/@kazuph/mcp-fetch"
+        },
+        {
+            "qualifiedName": "@Jimmy974/n8n-workflow-builder",
+            "displayName": "n8n Workflow Builder",
+            "description": "Create and manage n8n workflows programmatically.",
+            "createdAt": "2025-02-06T22:12:22.244Z",
+            "useCount": 196,
+            "homepage": "https://smithery.ai/server/@Jimmy974/n8n-workflow-builder"
+        },
+        {
+            "qualifiedName": "@burtthecoder/mcp-shodan",
+            "displayName": "Shodan Server",
+            "description": "A Model Context Protocol server for querying the Shodan API and Shodan CVEDB, providing access to network intelligence and security services.",
+            "createdAt": "2024-12-20T08:11:37.813Z",
+            "useCount": 194,
+            "homepage": "https://smithery.ai/server/@burtthecoder/mcp-shodan"
+        },
+        {
+            "qualifiedName": "@ibraheem4/linear-mcp",
+            "displayName": "Linear",
+            "description": "Interact with Linear's API for managing issues, projects, and teams.",
+            "createdAt": "2025-01-15T05:45:54.765Z",
+            "useCount": 189,
+            "homepage": "https://smithery.ai/server/@ibraheem4/linear-mcp"
+        },
+        {
+            "qualifiedName": "@mahecode/game-engine-mcp",
+            "displayName": "Game Engine Server",
+            "description": "Provide tools for game development and enhance sequential thinking. Access game assets, templates, and code generation to streamline your game projects. Break down complex problems and dynamically adjust your thought processes for effective problem-solving.",
+            "createdAt": "2025-03-07T19:28:08.563Z",
+            "useCount": 186,
+            "homepage": "https://smithery.ai/server/@mahecode/game-engine-mcp"
+        },
+        {
+            "qualifiedName": "mcp-server-perplexity",
+            "displayName": "Perplexity Server",
+            "description": "MCP Server for the Perplexity API.",
+            "createdAt": "2024-12-19T16:27:43.175Z",
+            "useCount": 184,
+            "homepage": "https://smithery.ai/server/mcp-server-perplexity"
+        },
+        {
+            "qualifiedName": "@imlewc/metabase-server",
+            "displayName": "Metabase Integration Server",
+            "description": "Interact with Metabase seamlessly. Access dashboards, execute queries, and retrieve data directly from your Metabase instance, enhancing your AI assistant's capabilities.",
+            "createdAt": "2025-03-02T15:27:38.295Z",
+            "useCount": 183,
+            "homepage": "https://smithery.ai/server/@imlewc/metabase-server"
+        },
+        {
+            "qualifiedName": "@burtthecoder/mcp-virustotal",
+            "displayName": "VirusTotal Server",
+            "description": "MCP server for VirusTotal API integration, providing comprehensive security analysis tools.",
+            "createdAt": "2024-12-20T08:44:30.208Z",
+            "useCount": 176,
+            "homepage": "https://smithery.ai/server/@burtthecoder/mcp-virustotal"
+        },
+        {
+            "qualifiedName": "@manimohans/verge-news-mcp",
+            "displayName": "The Verge News Server",
+            "description": "Fetch and search news articles from The Verge's RSS feed.",
+            "createdAt": "2025-02-26T18:51:25.213Z",
+            "useCount": 169,
+            "homepage": "https://smithery.ai/server/@manimohans/verge-news-mcp"
+        },
+        {
+            "qualifiedName": "@nickclyde/duckduckgo-mcp-server",
+            "displayName": "DuckDuckGo Search Server",
+            "description": "Enable web search capabilities through DuckDuckGo. Fetch and parse webpage content intelligently for enhanced LLM interaction.",
+            "createdAt": "2025-03-01T23:00:26.622Z",
+            "useCount": 169,
+            "homepage": "https://smithery.ai/server/@nickclyde/duckduckgo-mcp-server"
+        },
+        {
+            "qualifiedName": "@dcSpark/mcp-server-helius",
+            "displayName": "Helius",
+            "description": "Access Solana blockchain data seamlessly. Check wallet balances, retrieve blockchain information, and interact with tokens and NFTs directly through Claude.",
+            "createdAt": "2025-03-04T15:18:47.410Z",
+            "useCount": 166,
+            "homepage": "https://smithery.ai/server/@dcSpark/mcp-server-helius"
+        },
+        {
+            "qualifiedName": "@automatalabs/mcp-server-playwright",
+            "displayName": "Playwright",
+            "description": "A Model Context Protocol server providing browser automation capabilities using Playwright. It allows LLMs to interact with web pages, take screenshots, and execute JavaScript in a real browser environment.",
+            "createdAt": "2024-12-13T15:46:49.614Z",
+            "useCount": 160,
+            "homepage": "https://smithery.ai/server/@automatalabs/mcp-server-playwright"
+        },
+        {
+            "qualifiedName": "mongo-mcp",
+            "displayName": "MongoDB MCP Server",
+            "description": "An MCP server that enables LLMs to interact directly with MongoDB databases using natural language.",
+            "createdAt": "2024-12-19T16:10:32.337Z",
+            "useCount": 159,
+            "homepage": "https://smithery.ai/server/mongo-mcp"
+        },
+        {
+            "qualifiedName": "@kazuph/mcp-gmail-gas",
+            "displayName": "Gmail GAS",
+            "description": "Model Context Protocol server for Gmail integration using Google Apps Script.",
+            "createdAt": "2024-12-27T11:46:47.780Z",
+            "useCount": 151,
+            "homepage": "https://smithery.ai/server/@kazuph/mcp-gmail-gas"
+        },
+        {
+            "qualifiedName": "@joshuarileydev/supabase-mcp-server",
+            "displayName": "Supabase Server",
+            "description": "An MCP server providing access to the Supabase Management API for managing Supabase projects and organizations.",
+            "createdAt": "2024-12-20T08:59:58.868Z",
+            "useCount": 148,
+            "homepage": "https://smithery.ai/server/@joshuarileydev/supabase-mcp-server"
+        },
+        {
+            "qualifiedName": "@HenkDz/postgresql-mcp-server",
+            "displayName": "PostgreSQL Database Management Server",
+            "description": "Analyze, manage, and optimize your PostgreSQL databases effortlessly. Streamline your database operations with powerful tools for debugging, schema management, and data migration. Enhance performance monitoring and ensure your database runs smoothly with real-time insights and recommendations.",
+            "createdAt": "2025-03-06T17:08:50.020Z",
+            "useCount": 147,
+            "homepage": "https://smithery.ai/server/@HenkDz/postgresql-mcp-server"
+        },
+        {
+            "qualifiedName": "@rahulthedevil/Jira-Context-MCP",
+            "displayName": "Jira Context MCP",
+            "description": "Fetch and manage Jira issues efficiently.",
+            "createdAt": "2025-02-25T12:00:50.502Z",
+            "useCount": 145,
+            "homepage": "https://smithery.ai/server/@rahulthedevil/Jira-Context-MCP"
+        },
+        {
+            "qualifiedName": "@jkawamoto/mcp-youtube-transcript",
+            "displayName": "Youtube Transcript",
+            "description": "Retrieve transcripts of YouTube videos.",
+            "createdAt": "2025-02-09T06:00:16.969Z",
+            "useCount": 141,
+            "homepage": "https://smithery.ai/server/@jkawamoto/mcp-youtube-transcript"
+        },
+        {
+            "qualifiedName": "mcp-gsuite",
+            "displayName": "Google Workspace Integration",
+            "description": "Interact with Gmail and Google Calendar. Manage multiple Google accounts, search and compose emails, and manage calendar events.",
+            "createdAt": "2024-12-13T15:46:47.629Z",
+            "useCount": 140,
+            "homepage": "https://smithery.ai/server/mcp-gsuite"
+        },
+        {
+            "qualifiedName": "@miottid/todoist-mcp",
+            "displayName": "Todoist Integration",
+            "description": "Connect your LLM to interact with Todoist tasks and projects.",
+            "createdAt": "2025-02-11T21:46:24.708Z",
+            "useCount": 136,
+            "homepage": "https://smithery.ai/server/@miottid/todoist-mcp"
+        },
+        {
+            "qualifiedName": "@benborla29/mcp-server-mysql",
+            "displayName": "MySQL Server",
+            "description": "A Model Context Protocol server for read-only access to MySQL databases, allowing LLMs to inspect database schemas and execute queries.",
+            "createdAt": "2024-12-19T15:33:18.918Z",
+            "useCount": 135,
+            "homepage": "https://smithery.ai/server/@benborla29/mcp-server-mysql"
+        },
+        {
+            "qualifiedName": "server-cmd",
+            "displayName": "CMD Server",
+            "description": "MCP server for executing CMD and SSH commands.",
+            "createdAt": "2024-12-19T16:15:01.649Z",
+            "useCount": 135,
+            "homepage": "https://smithery.ai/server/server-cmd"
+        },
+        {
+            "qualifiedName": "search1api-mcp",
+            "displayName": "Search1API MCP Server",
+            "description": "A Model Context Protocol (MCP) server that provides search and crawl functionality using Search1API.",
+            "createdAt": "2024-12-13T15:46:55.342Z",
+            "useCount": 133,
+            "homepage": "https://smithery.ai/server/search1api-mcp"
+        },
+        {
+            "qualifiedName": "@AudienseCo/mcp-audiense-insights",
+            "displayName": "Audiense Insights",
+            "description": "Extract marketing insights and audience analysis from Audiense reports.",
+            "createdAt": "2025-01-31T16:57:41.832Z",
+            "useCount": 129,
+            "homepage": "https://smithery.ai/server/@AudienseCo/mcp-audiense-insights"
+        },
+        {
+            "qualifiedName": "dkmaker-mcp-rest-api",
+            "displayName": "REST API Tester",
+            "description": "A TypeScript-based MCP server that enables testing of REST APIs through Cline.",
+            "createdAt": "2024-12-22T03:28:03.284Z",
+            "useCount": 122,
+            "homepage": "https://smithery.ai/server/dkmaker-mcp-rest-api"
+        },
+        {
+            "qualifiedName": "mcp-server-stability-ai",
+            "displayName": "Stability AI",
+            "description": "Image generation, editing, and upscaling using Stability AI's API.",
+            "createdAt": "2025-01-03T09:28:53.852Z",
+            "useCount": 119,
+            "homepage": "https://smithery.ai/server/mcp-server-stability-ai"
+        },
+        {
+            "qualifiedName": "@MrunmayS/exa-mcp-server",
+            "displayName": "Exa MCP ",
+            "description": "Enable AI assistants to perform web searches using Exa's powerful search API.",
+            "createdAt": "2025-01-30T13:49:36.555Z",
+            "useCount": 110,
+            "homepage": "https://smithery.ai/server/@MrunmayS/exa-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-knowledge-graph",
+            "displayName": "Knowledge Graph Memory Server",
+            "description": "MCP server enabling persistent memory for Claude through a local knowledge graph.",
+            "createdAt": "2024-12-20T08:01:17.769Z",
+            "useCount": 108,
+            "homepage": "https://smithery.ai/server/mcp-knowledge-graph"
+        },
+        {
+            "qualifiedName": "mcp-mongo-server",
+            "displayName": "MCP MongoDB Server",
+            "description": "A Model Context Protocol server that provides access to MongoDB databases. It enables LLMs to inspect collection schemas and execute read-only queries.",
+            "createdAt": "2024-12-13T15:46:48.764Z",
+            "useCount": 107,
+            "homepage": "https://smithery.ai/server/mcp-mongo-server"
+        },
+        {
+            "qualifiedName": "@athapong/aio-mcp",
+            "displayName": "AIO-MCP Server",
+            "description": "A powerful Model Context Protocol (MCP) server implementation with integrations for GitLab, Jira, Confluence, YouTube, Google Maps, and more. This server provides AI-powered search capabilities and various utility tools for development workflows.",
+            "createdAt": "2025-03-04T02:59:49.250Z",
+            "useCount": 106,
+            "homepage": "https://smithery.ai/server/@athapong/aio-mcp"
+        },
+        {
+            "qualifiedName": "kagimcp",
+            "displayName": "Kagi",
+            "description": "Access Kagi Search API for retrieving information from the web.",
+            "createdAt": "2025-01-10T16:07:24.038Z",
+            "useCount": 105,
+            "homepage": "https://smithery.ai/server/kagimcp"
+        },
+        {
+            "qualifiedName": "@JayZeeDesign/figma-mcp",
+            "displayName": "Figma MCP Python",
+            "description": "Access Figma files and prototypes directly from your AI coding agents. Streamline your design workflow by integrating Figma with your development environment. Enhance your projects with seamless access to design assets and prototypes.",
+            "createdAt": "2025-03-08T00:12:33.799Z",
+            "useCount": 105,
+            "homepage": "https://smithery.ai/server/@JayZeeDesign/figma-mcp"
+        },
+        {
+            "qualifiedName": "@JigsawStack/ai-web-scraper",
+            "displayName": "JigsawStack AI Web Scraper",
+            "description": "Scrape any website instantly and get consistent structured data in seconds without writing any css selector code, check out API documentation here: https://jigsawstack.com/docs/api-reference/ai/scrape Get your API key here: https://jigsawstack.com/dashboard/",
+            "createdAt": "2025-03-01T19:18:48.515Z",
+            "useCount": 50,
+            "homepage": "https://smithery.ai/server/@JigsawStack/ai-web-scraper"
+        },
+        {
+            "qualifiedName": "@peng-shawn/mermaid-mcp-server",
+            "displayName": "Mermaid Diagram Generator",
+            "description": "Convert textual Mermaid diagram descriptions into high-quality PNG images. Enhance your AI applications with visual representations of data and processes effortlessly. Customize themes and backgrounds to fit your design needs.",
+            "createdAt": "2025-03-06T01:00:29.779Z",
+            "useCount": 97,
+            "homepage": "https://smithery.ai/server/@peng-shawn/mermaid-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-server-gsc",
+            "displayName": "Google Search Console",
+            "description": "A Model Context Protocol (MCP) server providing access to Google Search Console.",
+            "createdAt": "2024-12-19T16:07:45.640Z",
+            "useCount": 97,
+            "homepage": "https://smithery.ai/server/mcp-server-gsc"
+        },
+        {
+            "qualifiedName": "@crazyrabbitLTC/mcp-etherscan-server",
+            "displayName": "Etherscan Tools",
+            "description": "Access Ethereum blockchain data via Etherscan's API, including balances, transactions, token transfers, contract ABIs, gas prices, and ENS resolution.",
+            "createdAt": "2025-01-01T06:29:36.811Z",
+            "useCount": 96,
+            "homepage": "https://smithery.ai/server/@crazyrabbitLTC/mcp-etherscan-server"
+        },
+        {
+            "qualifiedName": "@IzumiSy/mcp-duckdb-memory-server",
+            "displayName": "DuckDB Knowledge Graph Memory Server",
+            "description": "Enhance your conversational agents with a robust memory system that efficiently retrieves and updates user information. Leverage the power of DuckDB for fast, scalable, and flexible querying of knowledge graphs. Transform interactions by maintaining a rich context of user preferences and relationships.",
+            "createdAt": "2025-03-04T14:40:48.989Z",
+            "useCount": 95,
+            "homepage": "https://smithery.ai/server/@IzumiSy/mcp-duckdb-memory-server"
+        },
+        {
+            "qualifiedName": "@graphlit/graphlit-mcp-server",
+            "displayName": "Graphlit",
+            "description": "Integrate MCP clients with the Graphlit service.\n\nIngest anything from Slack to Gmail to podcast feeds, in addition to web crawling, into a Graphlit project - and then retrieve relevant contents from the MCP client.",
+            "createdAt": "2025-03-02T03:03:37.441Z",
+            "useCount": 94,
+            "homepage": "https://smithery.ai/server/@graphlit/graphlit-mcp-server"
+        },
+        {
+            "qualifiedName": "@smithery-ai/google-maps",
+            "displayName": "Google Maps",
+            "description": "Provides location-based services and mapping functionality through the Google Maps Platform APIs",
+            "createdAt": "2024-12-13T15:46:56.196Z",
+            "useCount": 92,
+            "homepage": "https://smithery.ai/server/@smithery-ai/google-maps"
+        },
+        {
+            "qualifiedName": "@wirdes/db-mcp-tool",
+            "displayName": "Database Explorer",
+            "description": "Connect to and manage various databases effortlessly. Execute queries, list tables, and export data with ease, enhancing your database management experience.",
+            "createdAt": "2025-03-07T20:00:55.371Z",
+            "useCount": 88,
+            "homepage": "https://smithery.ai/server/@wirdes/db-mcp-tool"
+        },
+        {
+            "qualifiedName": "@llmindset/mcp-miro",
+            "displayName": "MIRO Whiteboard Connector",
+            "description": "Connects to the MIRO Whiteboard Application for board manipulation and sticky creation.",
+            "createdAt": "2024-12-20T07:51:24.381Z",
+            "useCount": 87,
+            "homepage": "https://smithery.ai/server/@llmindset/mcp-miro"
+        },
+        {
+            "qualifiedName": "@Deploya-labs/mcp-browser-use",
+            "displayName": "Browser Use (used by Deploya.dev)",
+            "description": "Automate your web browsing tasks with AI-driven control. Navigate pages, fill forms, and interact with elements using natural language commands. Enhance your browsing experience with visual understanding and state persistence across sessions.",
+            "createdAt": "2025-03-08T12:17:49.297Z",
+            "useCount": 87,
+            "homepage": "https://smithery.ai/server/@Deploya-labs/mcp-browser-use"
+        },
+        {
+            "qualifiedName": "@TommyBez/dbt-semantic-layer-mcp",
+            "displayName": "DBT Semantic Layer Server",
+            "description": "Query the DBT Semantic Layer API seamlessly. Enhance your data querying capabilities with a robust MCP server.",
+            "createdAt": "2025-02-28T16:21:46.480Z",
+            "useCount": 86,
+            "homepage": "https://smithery.ai/server/@TommyBez/dbt-semantic-layer-mcp"
+        },
+        {
+            "qualifiedName": "@itsanamune/seo-mcp",
+            "displayName": "SERP API Server",
+            "description": "Analyze search engine results, conduct keyword research, and perform competitor analysis effortlessly. Leverage powerful tools to gain insights and optimize your online presence. Start making data-driven decisions today with our comprehensive SERP analysis capabilities.",
+            "createdAt": "2025-03-06T10:24:46.482Z",
+            "useCount": 86,
+            "homepage": "https://smithery.ai/server/@itsanamune/seo-mcp"
+        },
+        {
+            "qualifiedName": "docker-mcp",
+            "displayName": "Docker",
+            "description": "Enabling seamless Docker container and compose stack management.",
+            "createdAt": "2024-12-13T15:46:47.914Z",
+            "useCount": 86,
+            "homepage": "https://smithery.ai/server/docker-mcp"
+        },
+        {
+            "qualifiedName": "@joao-loker/jhony-mcp",
+            "displayName": "Design Tokens Server",
+            "description": "Extract design tokens from Figma and convert them into a structured format for use in Flutter and React applications. Streamline your design-to-development workflow by automating token extraction and ensuring consistency across platforms.",
+            "createdAt": "2025-03-12T06:18:53.152Z",
+            "useCount": 84,
+            "homepage": "https://smithery.ai/server/@joao-loker/jhony-mcp"
+        },
+        {
+            "qualifiedName": "mcp-pandoc",
+            "displayName": "Pandoc Document Conversion",
+            "description": "A Model Context Protocol server for document format conversion using pandoc.",
+            "createdAt": "2024-12-19T15:48:52.139Z",
+            "useCount": 83,
+            "homepage": "https://smithery.ai/server/mcp-pandoc"
+        },
+        {
+            "qualifiedName": "cli-mcp-server",
+            "displayName": "CLI",
+            "description": "Command line interface for executing controlled CLI operations with robust security features including command whitelisting, path validation, and execution controls.",
+            "createdAt": "2024-12-13T15:46:47.100Z",
+            "useCount": 80,
+            "homepage": "https://smithery.ai/server/cli-mcp-server"
+        },
+        {
+            "qualifiedName": "@delorenj/trello",
+            "displayName": "Trello Server",
+            "description": "Interact with Trello boards and manage cards, lists, and activities.",
+            "createdAt": "2025-01-04T09:56:36.337Z",
+            "useCount": 80,
+            "homepage": "https://smithery.ai/server/@delorenj/trello"
+        },
+        {
+            "qualifiedName": "@terryso/mcp-pinterest",
+            "displayName": "Pinterest MCP Server",
+            "description": "Search for images and retrieve information from Pinterest.",
+            "createdAt": "2025-03-01T16:52:52.778Z",
+            "useCount": 79,
+            "homepage": "https://smithery.ai/server/@terryso/mcp-pinterest"
+        },
+        {
+            "qualifiedName": "@kwen1510/nltk-map",
+            "displayName": "NLTK Model Context Protocol Server",
+            "description": "Integrate NLTK with external data and tools seamlessly. Enhance your natural language processing capabilities by leveraging real-world data and actions through a standardized interface.",
+            "createdAt": "2025-03-08T07:04:58.768Z",
+            "useCount": 79,
+            "homepage": "https://smithery.ai/server/@kwen1510/nltk-map"
+        },
+        {
+            "qualifiedName": "@cdugo/mcp-get-docs",
+            "displayName": "DocsFetcher",
+            "description": "Fetch npm package documentation and present it for LLMs.",
+            "createdAt": "2025-02-26T23:28:36.965Z",
+            "useCount": 79,
+            "homepage": "https://smithery.ai/server/@cdugo/mcp-get-docs"
+        },
+        {
+            "qualifiedName": "@ai-zerolab/mcp-email-server",
+            "displayName": "Email Server",
+            "description": "Provide IMAP and SMTP functionalities through a standardized server interface.",
+            "createdAt": "2025-02-24T14:00:42.140Z",
+            "useCount": 78,
+            "homepage": "https://smithery.ai/server/@ai-zerolab/mcp-email-server"
+        },
+        {
+            "qualifiedName": "google-calendar-mcp",
+            "displayName": "Google Calendar",
+            "description": "Integration with Google Calendar to manage events through a standardized interface.",
+            "createdAt": "2024-12-24T02:42:34.662Z",
+            "useCount": 74,
+            "homepage": "https://smithery.ai/server/google-calendar-mcp"
+        },
+        {
+            "qualifiedName": "@ergut/mcp-bigquery-server",
+            "displayName": "BigQuery",
+            "description": "Provides secure, read-only access to BigQuery datasets. Enables natural language querying of BigQuery data with a 1GB processing limit.",
+            "createdAt": "2024-12-13T15:46:58.745Z",
+            "useCount": 73,
+            "homepage": "https://smithery.ai/server/@ergut/mcp-bigquery-server"
+        },
+        {
+            "qualifiedName": "mcp-dice",
+            "displayName": "Dice Roller",
+            "description": "Roll dice using standard dice notation and return results with their total sum.",
+            "createdAt": "2025-01-01T06:36:39.143Z",
+            "useCount": 72,
+            "homepage": "https://smithery.ai/server/mcp-dice"
+        },
+        {
+            "qualifiedName": "mcp-package-docs",
+            "displayName": "Package Docs",
+            "description": "Access package documentation for Go, Python, and NPM.",
+            "createdAt": "2025-01-01T06:39:54.811Z",
+            "useCount": 70,
+            "homepage": "https://smithery.ai/server/mcp-package-docs"
+        },
+        {
+            "qualifiedName": "@gradusnikov/pubmed-search-mcp-server",
+            "displayName": "PubMedSearch",
+            "description": "Search and retrieve academic papers from the PubMed database effortlessly. Access detailed information including titles, authors, journals, abstracts, and DOIs with ease. Enhance your research capabilities by integrating this server into your workflow.",
+            "createdAt": "2025-03-06T18:59:49.759Z",
+            "useCount": 69,
+            "homepage": "https://smithery.ai/server/@gradusnikov/pubmed-search-mcp-server"
+        },
+        {
+            "qualifiedName": "@TheSethRose/fetch-browser",
+            "displayName": "Fetch Browser",
+            "description": "Fetch web content and perform Google searches seamlessly.",
+            "createdAt": "2025-02-12T04:08:13.694Z",
+            "useCount": 68,
+            "homepage": "https://smithery.ai/server/@TheSethRose/fetch-browser"
+        },
+        {
+            "qualifiedName": "dify-mcp-server",
+            "displayName": "Dify MCP Server",
+            "description": "A simple implementation of an MCP server for using dify workflows.",
+            "createdAt": "2024-12-26T11:04:51.841Z",
+            "useCount": 68,
+            "homepage": "https://smithery.ai/server/dify-mcp-server"
+        },
+        {
+            "qualifiedName": "@NaveenBandarage/poke-mcp",
+            "displayName": "Pokémcp",
+            "description": "Poke-MCP is a Model Context Protocol (MCP) server that provides Pokémon information through a standardized interface. It connects to the [PokeAPI](https://pokeapi.co/) to fetch Pokémon data and exposes it through MCP tools that can be used by any MCP-compatible client, such as Claude Desktop App, Continue, Cline, and others.",
+            "createdAt": "2025-02-26T02:32:05.948Z",
+            "useCount": 66,
+            "homepage": "https://smithery.ai/server/@NaveenBandarage/poke-mcp"
+        },
+        {
+            "qualifiedName": "mcp-simple-timeserver",
+            "displayName": "Simple Timeserver",
+            "description": "Provide local and UTC time information.",
+            "createdAt": "2025-01-01T08:49:29.161Z",
+            "useCount": 59,
+            "homepage": "https://smithery.ai/server/mcp-simple-timeserver"
+        },
+        {
+            "qualifiedName": "@bunasQ/fs",
+            "displayName": "File System",
+            "description": "Manage and interact with file systems seamlessly. Access, read, and manipulate files with ease, enhancing your application's capabilities. Streamline your workflows by integrating file operations directly into your processes.",
+            "createdAt": "2025-03-07T17:38:23.517Z",
+            "useCount": 55,
+            "homepage": "https://smithery.ai/server/@bunasQ/fs"
+        },
+        {
+            "qualifiedName": "@wysh3/perplexity-mcp-server",
+            "displayName": "Perplexity Server",
+            "description": "Integrate AI-powered research capabilities seamlessly. Perform web searches, retrieve documentation, and analyze code with ease.",
+            "createdAt": "2025-02-11T22:00:45.925Z",
+            "useCount": 54,
+            "homepage": "https://smithery.ai/server/@wysh3/perplexity-mcp-server"
+        },
+        {
+            "qualifiedName": "@pskill9/hn-server",
+            "displayName": "Hacker News",
+            "description": "Fetch and parse stories from Hacker News.",
+            "createdAt": "2025-01-01T06:35:22.748Z",
+            "useCount": 53,
+            "homepage": "https://smithery.ai/server/@pskill9/hn-server"
+        },
+        {
+            "qualifiedName": "@mcpserver/openrouterai",
+            "displayName": "OpenRouter MCP Server",
+            "description": "A Model Context Protocol (MCP) server for integration with OpenRouter.ai, allowing access to various AI models through a unified interface.",
+            "createdAt": "2024-12-22T16:15:16.889Z",
+            "useCount": 49,
+            "homepage": "https://smithery.ai/server/@mcpserver/openrouterai"
+        },
+        {
+            "qualifiedName": "@launchthatbrand/mcp-monday-ts",
+            "displayName": "Monday.com MCP - Typescript",
+            "description": "A MCP server for Monday.com, that provides the basic functions of the standard GraqhQL API and some custom functions",
+            "createdAt": "2025-02-26T00:56:51.290Z",
+            "useCount": 47,
+            "homepage": "https://smithery.ai/server/@launchthatbrand/mcp-monday-ts"
+        },
+        {
+            "qualifiedName": "@puravparab/gitingest-mcp",
+            "displayName": "Gitingest MCP Server",
+            "description": "An MCP server for gitingest. It allows MCP clients like Claude Desktop, Cursor, Cline etc to quickly extract information about Github repositories including repository summaries, project directory structure, file contents, etc",
+            "createdAt": "2025-03-10T03:06:04.317Z",
+            "useCount": 47,
+            "homepage": "https://smithery.ai/server/@puravparab/gitingest-mcp"
+        },
+        {
+            "qualifiedName": "@smithery-ai/time",
+            "displayName": "Time Server",
+            "description": "Provide current time information and perform timezone conversions.",
+            "createdAt": "2025-01-19T17:20:59.416Z",
+            "useCount": 46,
+            "homepage": "https://smithery.ai/server/@smithery-ai/time"
+        },
+        {
+            "qualifiedName": "@oxylabs/oxylabs-mcp",
+            "displayName": "Oxylabs MCP",
+            "description": "Fetch and process content from specified URLs using the Oxylabs Web Scraper API.",
+            "createdAt": "2025-01-22T08:00:56.497Z",
+            "useCount": 46,
+            "homepage": "https://smithery.ai/server/@oxylabs/oxylabs-mcp"
+        },
+        {
+            "qualifiedName": "@lite/iterm-mcp",
+            "displayName": "iTerm MCP",
+            "description": "Access your iTerm session and control terminal commands seamlessly.",
+            "createdAt": "2025-02-18T07:27:03.733Z",
+            "useCount": 45,
+            "homepage": "https://smithery.ai/server/@lite/iterm-mcp"
+        },
+        {
+            "qualifiedName": "@lmcc-dev/mult-fetch-mcp-server",
+            "displayName": "Mult Fetch MCP Server",
+            "description": "Fetch web content in various formats and modes, seamlessly integrating with AI assistants like Claude. Utilize intelligent scraping techniques to retrieve HTML, JSON, and more, while enjoying bilingual support for English and Chinese.",
+            "createdAt": "2025-03-11T15:09:06.429Z",
+            "useCount": 44,
+            "homepage": "https://smithery.ai/server/@lmcc-dev/mult-fetch-mcp-server"
+        },
+        {
+            "qualifiedName": "any-chat-completions-mcp-server",
+            "displayName": "Any OpenAI Compatible API Integrations",
+            "description": "Integrate Claude with any OpenAI SDK Compatible Chat Completion API like OpenAI, Perplexity, Groq, xAI, PyroPrompts, etc.",
+            "createdAt": "2024-12-19T15:45:33.092Z",
+            "useCount": 44,
+            "homepage": "https://smithery.ai/server/any-chat-completions-mcp-server"
+        },
+        {
+            "qualifiedName": "@PhialsBasement/zonos-tts-mcp",
+            "displayName": "Zonos TTS Integration",
+            "description": "Enable text-to-speech capabilities through Claude. Generate speech with support for multiple emotions and languages.",
+            "createdAt": "2025-02-15T00:00:24.639Z",
+            "useCount": 43,
+            "homepage": "https://smithery.ai/server/@PhialsBasement/zonos-tts-mcp"
+        },
+        {
+            "qualifiedName": "mcp-server-commands",
+            "displayName": "Server Commands",
+            "description": "An MCP server to run arbitrary commands, allowing LLMs to execute shell commands or scripts.",
+            "createdAt": "2024-12-20T07:28:15.504Z",
+            "useCount": 42,
+            "homepage": "https://smithery.ai/server/mcp-server-commands"
+        },
+        {
+            "qualifiedName": "@tengfone/supabase-nextjs-mcp-server",
+            "displayName": "Supabase Notes",
+            "description": "Create, manage, and summarize notes using Supabase as a backend.",
+            "createdAt": "2025-01-01T06:34:44.178Z",
+            "useCount": 42,
+            "homepage": "https://smithery.ai/server/@tengfone/supabase-nextjs-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-tenki",
+            "displayName": "Tenki",
+            "description": "Get weather updates for Japan.",
+            "createdAt": "2025-01-11T15:18:12.799Z",
+            "useCount": 41,
+            "homepage": "https://smithery.ai/server/mcp-tenki"
+        },
+        {
+            "qualifiedName": "@oneshot-engineering/mcp-webresearch",
+            "displayName": "Web Research Server",
+            "description": "Bring real-time info into your conversations and easily research any topic. Utilize Google search integration, webpage content extraction, and session tracking to enhance your research capabilities. Capture screenshots and maintain a comprehensive record of your research sessions for better insights.",
+            "createdAt": "2025-03-10T02:17:57.207Z",
+            "useCount": 40,
+            "homepage": "https://smithery.ai/server/@oneshot-engineering/mcp-webresearch"
+        },
+        {
+            "qualifiedName": "@wysh3/perplexity-mcp-zerver",
+            "displayName": "Perplexity MCP Zerver",
+            "description": "Leverage AI-powered research capabilities seamlessly without the need for an API key. Perform web searches, retrieve documentation, and analyze code with a modular tool architecture. Enhance your research workflow with integrated chat and API discovery features.",
+            "createdAt": "2025-03-04T07:21:17.591Z",
+            "useCount": 40,
+            "homepage": "https://smithery.ai/server/@wysh3/perplexity-mcp-zerver"
+        },
+        {
+            "qualifiedName": "@ScrapeGraphAI/scrapegraph-mcp",
+            "displayName": "ScrapeGraph MCP Server",
+            "description": "ScrapeGraphAI is a LLM-powered scraping API for structured data extraction from any website. SmartScraper allows you to extract structured data from a specific webpage, SearchScraper finds the information you're looking for on the web and returns a structured response, and Markdownify converts webpages into markdown. \n\nWeb search integration and content filtering\n\n - API KEY --> dashboard.scrapegraphai.com",
+            "createdAt": "2025-03-05T02:21:36.534Z",
+            "useCount": 39,
+            "homepage": "https://smithery.ai/server/@ScrapeGraphAI/scrapegraph-mcp"
+        },
+        {
+            "qualifiedName": "@watsonchua/poker_win_calculator",
+            "displayName": "Poker Win Calculator",
+            "description": "Calculate your chances of winning in poker games with ease. Utilize advanced algorithms to analyze your hand and make informed decisions. Enhance your poker strategy and improve your gameplay with this powerful tool.",
+            "createdAt": "2025-03-08T07:05:28.905Z",
+            "useCount": 39,
+            "homepage": "https://smithery.ai/server/@watsonchua/poker_win_calculator"
+        },
+        {
+            "qualifiedName": "@TheSethRose/mcp-server-starter",
+            "displayName": "MCP Server Starter",
+            "description": "Build a robust server to enable AI agents to interact with various tools.",
+            "createdAt": "2025-02-11T22:02:10.921Z",
+            "useCount": 38,
+            "homepage": "https://smithery.ai/server/@TheSethRose/mcp-server-starter"
+        },
+        {
+            "qualifiedName": "mcp-package-version",
+            "displayName": "Package Version",
+            "description": "Provides the latest stable package versions from multiple registries for LLMs.",
+            "createdAt": "2024-12-20T08:53:55.682Z",
+            "useCount": 38,
+            "homepage": "https://smithery.ai/server/mcp-package-version"
+        },
+        {
+            "qualifiedName": "@gradusnikov/google-search-mcp-server",
+            "displayName": "Google Search Server",
+            "description": "Leverage Google Custom Search to enhance your applications with powerful search capabilities. Easily integrate and retrieve search results from Google directly within your environment. Start building smarter applications that can access the vast information available on the web.",
+            "createdAt": "2025-03-06T19:01:01.696Z",
+            "useCount": 38,
+            "homepage": "https://smithery.ai/server/@gradusnikov/google-search-mcp-server"
+        },
+        {
+            "qualifiedName": "pubmed-search",
+            "displayName": "PubMed Search",
+            "description": "Search PubMed via MCP.",
+            "createdAt": "2024-12-20T07:56:49.799Z",
+            "useCount": 37,
+            "homepage": "https://smithery.ai/server/pubmed-search"
+        },
+        {
+            "qualifiedName": "@sethbang/mcp-screenshot-server",
+            "displayName": "Screenshot Server",
+            "description": "Capture screenshots of web pages and local HTML files using Puppeteer.",
+            "createdAt": "2025-01-01T09:01:22.520Z",
+            "useCount": 37,
+            "homepage": "https://smithery.ai/server/@sethbang/mcp-screenshot-server"
+        },
+        {
+            "qualifiedName": "@mundume/gmail-mcp",
+            "displayName": "Gmail Notes Server",
+            "description": "Create and manage your notes seamlessly with this server. Generate summaries of your notes and access them easily through a simple interface. Enhance your productivity by integrating your notes with LLM capabilities.",
+            "createdAt": "2025-03-11T07:52:08.972Z",
+            "useCount": 36,
+            "homepage": "https://smithery.ai/server/@mundume/gmail-mcp"
+        },
+        {
+            "qualifiedName": "redis-mcp",
+            "displayName": "Redis Server",
+            "description": "Provides tools for interacting with Redis databases.",
+            "createdAt": "2025-01-07T03:35:54.835Z",
+            "useCount": 35,
+            "homepage": "https://smithery.ai/server/redis-mcp"
+        },
+        {
+            "qualifiedName": "@skrapeai/skrape-mcp",
+            "displayName": "Skrape MCP Server",
+            "description": "Get any website content - Convert webpages into clean, LLM-ready Markdown.",
+            "createdAt": "2025-01-27T21:00:32.330Z",
+            "useCount": 34,
+            "homepage": "https://smithery.ai/server/@skrapeai/skrape-mcp"
+        },
+        {
+            "qualifiedName": "@openbnb-org/mcp-server-airbnb",
+            "displayName": "Airbnb Search and Listing Server",
+            "description": "Search for Airbnb listings and get detailed information about specific properties. Effortlessly plan your next trip with structured data and no API key required, while respecting Airbnb's guidelines.",
+            "createdAt": "2025-03-10T00:48:42.308Z",
+            "useCount": 34,
+            "homepage": "https://smithery.ai/server/@openbnb-org/mcp-server-airbnb"
+        },
+        {
+            "qualifiedName": "@cloudflare/mcp-server-cloudflare",
+            "displayName": "Cloudflare",
+            "description": "Interact with Cloudflare services including Workers, KV Store, R2 Storage, D1 Database, and Analytics. Deploy and manage Workers, handle data in KV stores, manage R2 buckets, execute SQL queries in D1 databases, and retrieve analytics data.",
+            "createdAt": "2024-12-13T15:46:56.480Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@cloudflare/mcp-server-cloudflare"
+        },
+        {
+            "qualifiedName": "findata-mcp-server",
+            "displayName": "Financial Data Server",
+            "description": "MCP server for fetching financial data from Alpha Vantage.",
+            "createdAt": "2024-12-20T08:41:43.434Z",
+            "useCount": 33,
+            "homepage": "https://smithery.ai/server/findata-mcp-server"
+        },
+        {
+            "qualifiedName": "jira-mcp",
+            "displayName": "JIRA",
+            "description": "An MCP server that enables Large Language Models (LLMs) to interact with JIRA through standardized tools and context, including JQL search and issue details retrieval.",
+            "createdAt": "2024-12-20T07:27:05.191Z",
+            "useCount": 33,
+            "homepage": "https://smithery.ai/server/jira-mcp"
+        },
+        {
+            "qualifiedName": "mcp-timeserver",
+            "displayName": "Time Server",
+            "description": "Provide the current date and time in various timezones.",
+            "createdAt": "2025-01-01T08:55:35.326Z",
+            "useCount": 32,
+            "homepage": "https://smithery.ai/server/mcp-timeserver"
+        },
+        {
+            "qualifiedName": "mcp-wolfram-alpha",
+            "displayName": "Wolfram Alpha",
+            "description": "Connect to Wolfram Alpha API for computational knowledge.",
+            "createdAt": "2025-01-10T08:15:21.643Z",
+            "useCount": 32,
+            "homepage": "https://smithery.ai/server/mcp-wolfram-alpha"
+        },
+        {
+            "qualifiedName": "@JigsawStack/vocr",
+            "displayName": "JigsawStack vOCR",
+            "description": "OCR + AI = Magic: \nExtract data from any image in a consistent structure with fine-tuned vLLMs for the highest accuracy. Learn more about AI backed OCR here: https://jigsawstack.com/docs/api-reference/ai/vocr Get your jigsawstack API key here: https://jigsawstack.com/dashboard/",
+            "createdAt": "2025-03-03T20:21:44.797Z",
+            "useCount": 16,
+            "homepage": "https://smithery.ai/server/@JigsawStack/vocr"
+        },
+        {
+            "qualifiedName": "uiflowchartcreator",
+            "displayName": "UI Flowchart Creator",
+            "description": "Create UI flowcharts and visualize user interfaces.",
+            "createdAt": "2025-01-01T06:28:40.081Z",
+            "useCount": 32,
+            "homepage": "https://smithery.ai/server/uiflowchartcreator"
+        },
+        {
+            "qualifiedName": "@winor30/mcp-server-datadog",
+            "displayName": "Datadog API Integration",
+            "description": "Leverage Datadog's powerful monitoring features for incident management, logs, metrics, and more. Streamline your observability processes by integrating directly with the Datadog API through this server. Enhance your incident response and monitoring capabilities effortlessly.",
+            "createdAt": "2025-03-06T15:00:55.203Z",
+            "useCount": 31,
+            "homepage": "https://smithery.ai/server/@winor30/mcp-server-datadog"
+        },
+        {
+            "qualifiedName": "@arjunkmrm/mcp-sg-lta",
+            "displayName": "Singapore LTA MCP Server",
+            "description": "Access real-time transportation information for Singapore. Get bus arrivals, traffic conditions, and train service updates seamlessly.",
+            "createdAt": "2025-02-12T13:50:43.475Z",
+            "useCount": 31,
+            "homepage": "https://smithery.ai/server/@arjunkmrm/mcp-sg-lta"
+        },
+        {
+            "qualifiedName": "@smithery-ai/git",
+            "displayName": "MCP Server Git",
+            "description": "A Model Context Protocol server for Git repository interaction and automation.",
+            "createdAt": "2024-12-13T15:46:49.332Z",
+            "useCount": 28,
+            "homepage": "https://smithery.ai/server/@smithery-ai/git"
+        },
+        {
+            "qualifiedName": "@arjshiv/localutils-mcp-server",
+            "displayName": "Local Utilities",
+            "description": "Access various local system utilities quickly and efficiently. Retrieve system information like time, hostname, public IP, and more with ease. Enhance your MCP-compatible applications with essential local functionalities.",
+            "createdAt": "2025-03-09T01:37:15.324Z",
+            "useCount": 27,
+            "homepage": "https://smithery.ai/server/@arjshiv/localutils-mcp-server"
+        },
+        {
+            "qualifiedName": "kagi-server",
+            "displayName": "Kagi Search",
+            "description": "Access Kagi's powerful search engine functionality. Enables web searches with high-quality, ad-free results from Kagi's search API.",
+            "createdAt": "2024-12-13T15:46:57.329Z",
+            "useCount": 27,
+            "homepage": "https://smithery.ai/server/kagi-server"
+        },
+        {
+            "qualifiedName": "@browserbasehq/mcp-stagehand",
+            "displayName": "Stagehand",
+            "description": "Provides cloud browser automation capabilities using Stagehand, enabling LLMs to interact with web pages, take screenshots, and execute JavaScript in a cloud browser environment.",
+            "createdAt": "2024-12-13T15:47:00.724Z",
+            "useCount": 13,
+            "homepage": "https://smithery.ai/server/@browserbasehq/mcp-stagehand"
+        },
+        {
+            "qualifiedName": "@lars-hagen/slack-user-mcp",
+            "displayName": "Slack User MCP Server",
+            "description": "Enable interaction with Slack workspaces as a user.",
+            "createdAt": "2025-01-29T02:00:26.803Z",
+            "useCount": 26,
+            "homepage": "https://smithery.ai/server/@lars-hagen/slack-user-mcp"
+        },
+        {
+            "qualifiedName": "notion_mcp",
+            "displayName": "Notion Integration",
+            "description": "An MCP server that integrates with Notion's API to manage personal todo lists.",
+            "createdAt": "2024-12-19T15:56:40.443Z",
+            "useCount": 25,
+            "homepage": "https://smithery.ai/server/notion_mcp"
+        },
+        {
+            "qualifiedName": "piapi-mcp-server",
+            "displayName": "PiAPI MCP Server",
+            "description": "MCP Server for PiAPI image generation, supporting media content creation through various services.",
+            "createdAt": "2024-12-27T11:50:49.329Z",
+            "useCount": 25,
+            "homepage": "https://smithery.ai/server/piapi-mcp-server"
+        },
+        {
+            "qualifiedName": "@mark3labs/mcp-filesystem-server",
+            "displayName": "Filesystem Server",
+            "description": "Go server implementing Model Context Protocol (MCP) for filesystem operations, allowing read, write, and other operations within specified directories.",
+            "createdAt": "2024-12-19T16:24:49.425Z",
+            "useCount": 25,
+            "homepage": "https://smithery.ai/server/@mark3labs/mcp-filesystem-server"
+        },
+        {
+            "qualifiedName": "@diegofornalha/mcp-server-serper",
+            "displayName": "Serper Search and Scrape",
+            "description": "Habilite recursos poderosos de pesquisa na web e extração de conteúdo. Realize pesquisas ricas na web e raspe o conteúdo da página da web perfeitamente com a integração da API Serper.",
+            "createdAt": "2025-03-10T20:34:01.733Z",
+            "useCount": 25,
+            "homepage": "https://smithery.ai/server/@diegofornalha/mcp-server-serper"
+        },
+        {
+            "qualifiedName": "@thedaviddias/mcp-llms-txt-explorer",
+            "displayName": "LLMS.txt Explorer",
+            "description": "Explore and analyze websites that implement the llms.txt standard. Discover compliant websites and validate their llms.txt files effortlessly. Gain structured insights into the llms.txt ecosystem with ease.",
+            "createdAt": "2025-03-04T04:43:30.063Z",
+            "useCount": 25,
+            "homepage": "https://smithery.ai/server/@thedaviddias/mcp-llms-txt-explorer"
+        },
+        {
+            "qualifiedName": "@smithery-ai/sentry",
+            "displayName": "Sentry",
+            "description": "Error tracking and performance monitoring for your applications",
+            "createdAt": "2024-12-13T15:46:57.894Z",
+            "useCount": 24,
+            "homepage": "https://smithery.ai/server/@smithery-ai/sentry"
+        },
+        {
+            "qualifiedName": "@mundume/simple-mcp",
+            "displayName": "Simple Notes MCP Server",
+            "description": "Create and manage your notes effortlessly. Generate summaries of your notes and access them via unique URIs. Enhance your note-taking experience with a simple and effective tool.",
+            "createdAt": "2025-03-06T11:59:41.520Z",
+            "useCount": 24,
+            "homepage": "https://smithery.ai/server/@mundume/simple-mcp"
+        },
+        {
+            "qualifiedName": "mcp-shell-server",
+            "displayName": "Shell Server",
+            "description": "Execute whitelisted shell commands securely via MCP.",
+            "createdAt": "2025-01-12T07:16:43.022Z",
+            "useCount": 23,
+            "homepage": "https://smithery.ai/server/mcp-shell-server"
+        },
+        {
+            "qualifiedName": "mcp-server-rag-web-browser",
+            "displayName": "RAG Web Browser Server",
+            "description": "This server allows AI models to perform web searches and scrape content, returning it in Markdown format via the RAG Web Browser Actor.",
+            "createdAt": "2024-12-19T15:51:15.458Z",
+            "useCount": 23,
+            "homepage": "https://smithery.ai/server/mcp-server-rag-web-browser"
+        },
+        {
+            "qualifiedName": "mcp_snowflake_server",
+            "displayName": "Snowflake Server",
+            "description": "A Model Context Protocol server implementation that provides database interaction with Snowflake, allowing SQL queries and data insights.",
+            "createdAt": "2024-12-19T15:32:19.234Z",
+            "useCount": 22,
+            "homepage": "https://smithery.ai/server/mcp_snowflake_server"
+        },
+        {
+            "qualifiedName": "@adhikasp/mcp-reddit",
+            "displayName": "Reddit Content",
+            "description": "Fetch and analyze content from Reddit, including hot threads and detailed post content.",
+            "createdAt": "2025-01-01T08:52:44.782Z",
+            "useCount": 21,
+            "homepage": "https://smithery.ai/server/@adhikasp/mcp-reddit"
+        },
+        {
+            "qualifiedName": "mcp-hn",
+            "displayName": "Hacker News",
+            "description": "Fetch stories, comments, and user info from Hacker News.",
+            "createdAt": "2025-01-01T06:41:58.973Z",
+            "useCount": 21,
+            "homepage": "https://smithery.ai/server/mcp-hn"
+        },
+        {
+            "qualifiedName": "@devalexandre/mcp-servers",
+            "displayName": "MCP Servers",
+            "description": "Automate browser tasks effortlessly. Control a headless browser for navigation, screenshot capturing, and element interaction, all through a simple interface. Enhance your automation projects with dynamic resource access and server lifecycle management.",
+            "createdAt": "2025-03-10T19:08:21.068Z",
+            "useCount": 20,
+            "homepage": "https://smithery.ai/server/@devalexandre/mcp-servers"
+        },
+        {
+            "qualifiedName": "@jkawamoto/mcp-bear",
+            "displayName": "Bear MCP Server",
+            "description": "Interact with Bear note-taking software.",
+            "createdAt": "2025-02-13T06:00:22.528Z",
+            "useCount": 20,
+            "homepage": "https://smithery.ai/server/@jkawamoto/mcp-bear"
+        },
+        {
+            "qualifiedName": "@sakce/mcp-server-monday",
+            "displayName": "Monday.com MCP Server",
+            "description": "Enable interaction with Monday.com boards and items.",
+            "createdAt": "2025-02-21T22:00:25.880Z",
+            "useCount": 19,
+            "homepage": "https://smithery.ai/server/@sakce/mcp-server-monday"
+        },
+        {
+            "qualifiedName": "@enescinar/twitter-mcp",
+            "displayName": "Twitter Server",
+            "description": "A Model Context Protocol server that allows interaction with Twitter, enabling posting tweets and searching Twitter.",
+            "createdAt": "2024-12-19T15:50:44.968Z",
+            "useCount": 18,
+            "homepage": "https://smithery.ai/server/@enescinar/twitter-mcp"
+        },
+        {
+            "qualifiedName": "@Streen9/azure-mcp",
+            "displayName": "Azure MCP",
+            "description": "Enable Claude Desktop to manage Azure resources through natural language queries.",
+            "createdAt": "2025-02-23T01:00:18.008Z",
+            "useCount": 18,
+            "homepage": "https://smithery.ai/server/@Streen9/azure-mcp"
+        },
+        {
+            "qualifiedName": "@diegofornalha/flow-mcp",
+            "displayName": "Flow RPC Server",
+            "description": "Transmita dados de blockchain sem problemas. Utilize métodos JSON-RPC padronizados para interagir com EVM onFlow permitindo que seus aplicativos de IA acessem informações de blockchain sem esforço.",
+            "createdAt": "2025-03-12T04:38:07.922Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@diegofornalha/flow-mcp"
+        },
+        {
+            "qualifiedName": "@RyanCardin15/azuredevops-mcp",
+            "displayName": "Azure DevOps Integration",
+            "description": "Seamlessly manage work items, repositories, boards, and sprints in Azure DevOps through a powerful API. Enhance your AI assistants and tools with standardized access to Azure DevOps functionalities. Streamline your development workflow and improve team collaboration with easy integration.",
+            "createdAt": "2025-03-06T21:16:13.560Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@RyanCardin15/azuredevops-mcp"
+        },
+        {
+            "qualifiedName": "coinmarket-service",
+            "displayName": "Coinmarket Server",
+            "description": "Access Coinmarket API endpoints for currency listings and token quotes.",
+            "createdAt": "2024-12-19T16:26:33.900Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/coinmarket-service"
+        },
+        {
+            "qualifiedName": "@mcp-get-community/server-llm-txt",
+            "displayName": "LLM.txt MCP Server",
+            "description": "A Model Context Protocol (MCP) server that processes llm.txt files, offering directory listing, content retrieval, and multi-query search capabilities. It supports local caching and various OS-specific cache locations.",
+            "createdAt": "2024-12-13T15:46:53.334Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@mcp-get-community/server-llm-txt"
+        },
+        {
+            "qualifiedName": "@dev-assistant-ai/github",
+            "displayName": "GitHub",
+            "description": "Enable seamless file operations, repository management, and advanced search functionalities on GitHub. Automate your workflows with automatic branch creation and comprehensive error handling, all while preserving Git history. Enhance your development experience by integrating GitHub capabilities directly into your applications.",
+            "createdAt": "2025-03-12T03:28:25.977Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@dev-assistant-ai/github"
+        },
+        {
+            "qualifiedName": "@1595901624/crypto-mcp",
+            "displayName": "Crypto_MCP",
+            "description": "A Model Context Protocol (MCP) server for encrypting/decrypting/algorithm/hash",
+            "createdAt": "2025-02-25T01:00:38.313Z",
+            "useCount": 17,
+            "homepage": "https://smithery.ai/server/@1595901624/crypto-mcp"
+        },
+        {
+            "qualifiedName": "@JigsawStack/ai-web-search",
+            "displayName": "JigsawStack AI Web Search",
+            "description": "Effortlessly search the Web and get access to high-quality results powered with AI. Learn more about this API here: https://jigsawstack.com/docs/api-reference/web/ai-search Get your jigsawstack API key here: https://jigsawstack.com/dashboard/",
+            "createdAt": "2025-03-02T07:51:47.017Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@JigsawStack/ai-web-search"
+        },
+        {
+            "qualifiedName": "@Benniu/emqx-mcp-server",
+            "displayName": "EMQX MCP Server",
+            "description": "A Model Context Protocol (MCP) server implementation that provides EMQX MQTT broker interaction.",
+            "createdAt": "2025-03-02T19:30:59.857Z",
+            "useCount": 16,
+            "homepage": "https://smithery.ai/server/@Benniu/emqx-mcp-server"
+        },
+        {
+            "qualifiedName": "github-mapper-mcp-server",
+            "displayName": "GitHub Mapper",
+            "description": "An MCP server that maps and analyzes GitHub repository structures, providing summary statistics and detailed file structures.",
+            "createdAt": "2024-12-20T13:59:14.097Z",
+            "useCount": 15,
+            "homepage": "https://smithery.ai/server/github-mapper-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-datetime",
+            "displayName": "Datetime Formatting Server",
+            "description": "A service for generating datetime strings in various formats, optimized for integration with the Claude Desktop Application.",
+            "createdAt": "2024-12-20T07:57:12.428Z",
+            "useCount": 15,
+            "homepage": "https://smithery.ai/server/mcp-datetime"
+        },
+        {
+            "qualifiedName": "@mz462/mcppaylocity",
+            "displayName": "Paylocity Data Fetcher",
+            "description": "Fetch and manage employee data, earnings, and pay statements from Paylocity seamlessly. Access comprehensive employee information and insights through a secure API integration. Simplify your HR processes with real-time data retrieval and management capabilities.",
+            "createdAt": "2025-03-08T16:43:03.700Z",
+            "useCount": 15,
+            "homepage": "https://smithery.ai/server/@mz462/mcppaylocity"
+        },
+        {
+            "qualifiedName": "@buoooou/supaui-mcp",
+            "displayName": "SupaUI MCP",
+            "description": "Automatically generate a variety of UI components to improve development efficiency. Seamlessly integrate with Claude and Windsurf AI assistants to support custom component query and generation.",
+            "createdAt": "2025-03-10T11:21:21.768Z",
+            "useCount": 14,
+            "homepage": "https://smithery.ai/server/@buoooou/supaui-mcp"
+        },
+        {
+            "qualifiedName": "mapbox-mcp-server",
+            "displayName": "Mapbox Server",
+            "description": "Navigation and mapping tools using the Mapbox API.",
+            "createdAt": "2025-01-01T08:54:20.046Z",
+            "useCount": 14,
+            "homepage": "https://smithery.ai/server/mapbox-mcp-server"
+        },
+        {
+            "qualifiedName": "@jamiew/spotify-mcp",
+            "displayName": "Spotify",
+            "description": "Connect to Spotify to control playback and manage your music library. This fork includes playlist management support",
+            "createdAt": "2025-01-27T21:13:52.433Z",
+            "useCount": 13,
+            "homepage": "https://smithery.ai/server/@jamiew/spotify-mcp"
+        },
+        {
+            "qualifiedName": "@antoncoding/mcp-brianknows",
+            "displayName": "Brian Knows",
+            "description": "Enhance your applications with intelligent context-aware capabilities. Leverage real-world data and tools seamlessly to create more interactive and responsive user experiences.",
+            "createdAt": "2025-03-02T08:04:42.018Z",
+            "useCount": 13,
+            "homepage": "https://smithery.ai/server/@antoncoding/mcp-brianknows"
+        },
+        {
+            "qualifiedName": "@hostedmcp/multitool",
+            "displayName": "Hosted MCP",
+            "description": "Provide a hosted environment for Model Context Protocol applications.",
+            "createdAt": "2025-02-24T11:35:35.876Z",
+            "useCount": 13,
+            "homepage": "https://smithery.ai/server/@hostedmcp/multitool"
+        },
+        {
+            "qualifiedName": "@mzxrai/mcp-openai",
+            "displayName": "OpenAI Server",
+            "description": "MCP server for simple interaction with OpenAI API.",
+            "createdAt": "2024-12-20T08:03:29.202Z",
+            "useCount": 13,
+            "homepage": "https://smithery.ai/server/@mzxrai/mcp-openai"
+        },
+        {
+            "qualifiedName": "llm-context",
+            "displayName": "LLM Context",
+            "description": "A tool that helps inject relevant content from projects into LLM chat interfaces, leveraging `.gitignore` patterns for file selection.",
+            "createdAt": "2024-12-20T08:42:55.455Z",
+            "useCount": 12,
+            "homepage": "https://smithery.ai/server/llm-context"
+        },
+        {
+            "qualifiedName": "perplexity-mcp",
+            "displayName": "Perplexity MCP",
+            "description": "An MCP server providing web search functionality using Perplexity AI's API.",
+            "createdAt": "2024-12-27T11:48:40.946Z",
+            "useCount": 12,
+            "homepage": "https://smithery.ai/server/perplexity-mcp"
+        },
+        {
+            "qualifiedName": "@0xshellming/mcp-ai-summarizer",
+            "displayName": "Content Summarizer Server",
+            "description": "Generate concise summaries from various content formats using advanced AI models.",
+            "createdAt": "2025-02-28T12:08:54.423Z",
+            "useCount": 12,
+            "homepage": "https://smithery.ai/server/@0xshellming/mcp-ai-summarizer"
+        },
+        {
+            "qualifiedName": "@manimohans/farcaster-mcp",
+            "displayName": "Farcaster MCP Server",
+            "description": "Interact with the Farcaster Network to fetch and use casts.",
+            "createdAt": "2025-02-28T21:21:20.917Z",
+            "useCount": 11,
+            "homepage": "https://smithery.ai/server/@manimohans/farcaster-mcp"
+        },
+        {
+            "qualifiedName": "@dev-assistant-ai/mcp-servers",
+            "displayName": "GitHub API MCP Server",
+            "description": "Enable seamless file operations, repository management, and advanced search functionalities on GitHub. Automate your workflow with automatic branch creation and comprehensive error handling, ensuring your Git history is preserved. Streamline your development process by managing repositories and issues efficiently through this powerful integration.",
+            "createdAt": "2025-03-12T03:21:08.931Z",
+            "useCount": 11,
+            "homepage": "https://smithery.ai/server/@dev-assistant-ai/mcp-servers"
+        },
+        {
+            "qualifiedName": "@RyanCardin15/tidesandcurrents",
+            "displayName": "NOAA Tides and Currents",
+            "description": "Retrieve real-time and historical water level, tide, and currents data effortlessly. Access comprehensive meteorological information and station metadata to enhance your applications. Utilize the NOAA Tides and Currents API through a standardized MCP interface for seamless integration.",
+            "createdAt": "2025-03-05T02:55:40.964Z",
+            "useCount": 11,
+            "homepage": "https://smithery.ai/server/@RyanCardin15/tidesandcurrents"
+        },
+        {
+            "qualifiedName": "@BrockReece/whimsical-mcp-server",
+            "displayName": "Whimsical Diagram Creator",
+            "description": "Generate Whimsical diagrams programmatically using Mermaid markup. Enhance your visual documentation by creating complex diagrams directly from your MCP Client. Streamline your workflow with instant access to diagram URLs and images for easy iteration.",
+            "createdAt": "2025-03-10T15:00:59.207Z",
+            "useCount": 11,
+            "homepage": "https://smithery.ai/server/@BrockReece/whimsical-mcp-server"
+        },
+        {
+            "qualifiedName": "@JigsawStack/translation",
+            "displayName": "JigsawStack Translation",
+            "description": "With our real time AI Translation, you can translate any text, conversation, or document to any language while maintaining the context, tone, and meaning with AI enabling high accuracy and reliability.\n\nWe support 180+ language pairs! Check out the list of languages we support here: https://jigsawstack.com/docs/additional-resources/languages\n\nYou can get your jigsawstack key here: https://jigsawstack.com/dashboard/",
+            "createdAt": "2025-03-02T18:24:24.718Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@JigsawStack/translation"
+        },
+        {
+            "qualifiedName": "@robertoamoreno/couchdb-mcp-server",
+            "displayName": "CouchDB MCP Server",
+            "description": "Manage CouchDB databases and documents effortlessly.",
+            "createdAt": "2025-03-01T22:47:24.630Z",
+            "useCount": 10,
+            "homepage": "https://smithery.ai/server/@robertoamoreno/couchdb-mcp-server"
+        },
+        {
+            "qualifiedName": "@iamadk/fetch",
+            "displayName": "Fetch Server",
+            "description": "Retrieve and process web content effortlessly. Convert HTML to markdown for easier consumption by LLMs, allowing models to extract information from web pages in manageable chunks.",
+            "createdAt": "2025-03-12T12:41:38.556Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/@iamadk/fetch"
+        },
+        {
+            "qualifiedName": "elevenlabs-mcp-server",
+            "displayName": "ElevenLabs",
+            "description": "Integrate with ElevenLabs text-to-speech API for voice generation.",
+            "createdAt": "2025-01-01T06:41:03.089Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/elevenlabs-mcp-server"
+        },
+        {
+            "qualifiedName": "@hannesrudolph/mcp-ragdocs",
+            "displayName": "RAG Documentation",
+            "description": "An MCP server for semantic documentation search and retrieval using vector databases to augment LLM capabilities.",
+            "createdAt": "2024-12-20T08:05:59.310Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/@hannesrudolph/mcp-ragdocs"
+        },
+        {
+            "qualifiedName": "@aldrin-labs/solana-docs-mcp-server",
+            "displayName": "Solana Docs Server",
+            "description": "Solana docs context",
+            "createdAt": "2025-01-05T12:41:50.373Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/@aldrin-labs/solana-docs-mcp-server"
+        },
+        {
+            "qualifiedName": "@himanshusanecha/mcp-osint-server",
+            "displayName": "OSINT Server",
+            "description": "Leverage powerful open-source intelligence tools to gather and analyze data from various sources. Enhance your investigations with automated data retrieval and processing capabilities. Simplify your research workflow and make informed decisions faster.",
+            "createdAt": "2025-03-12T16:23:40.980Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/@himanshusanecha/mcp-osint-server"
+        },
+        {
+            "qualifiedName": "@alinaqi/mcp-linkedin-server",
+            "displayName": "LinkedIn Browser",
+            "description": "Automate LinkedIn interactions and extract data securely. Leverage browser automation to manage profiles, posts, and feed while adhering to LinkedIn's terms of service.",
+            "createdAt": "2025-03-10T07:00:52.116Z",
+            "useCount": 9,
+            "homepage": "https://smithery.ai/server/@alinaqi/mcp-linkedin-server"
+        },
+        {
+            "qualifiedName": "@ProgramComputer/nasa-mcp-server",
+            "displayName": "NASA MCP Server",
+            "description": "Access NASA's vast array of data sources through a standardized interface for AI models. Retrieve and interact with over 20 NASA APIs seamlessly, ensuring optimized data formats for AI consumption. Experience automatic parameter validation and comprehensive documentation to enhance your development process.",
+            "createdAt": "2025-03-06T01:01:11.573Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@ProgramComputer/nasa-mcp-server"
+        },
+        {
+            "qualifiedName": "@turkyden/weather",
+            "displayName": "Weather",
+            "description": "Provide real-time weather information and forecasts to your applications. Integrate weather data seamlessly to enhance user experiences and decision-making. Access accurate and up-to-date weather insights effortlessly.",
+            "createdAt": "2025-03-12T10:08:06.581Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@turkyden/weather"
+        },
+        {
+            "qualifiedName": "@llmindset/mcp-hfspace",
+            "displayName": "HuggingFace Space",
+            "description": "Connect to Hugging Face Spaces with minimal setup. Access AI models for tasks like image generation, text-to-speech, speech-to-text, chat, and more. Simply add your spaces and start using them.",
+            "createdAt": "2024-12-13T15:46:58.460Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@llmindset/mcp-hfspace"
+        },
+        {
+            "qualifiedName": "ai-humanizer-mcp-server",
+            "displayName": "AI Humanize Server",
+            "description": "Refine AI-generated content to sound more natural and human-like with advanced AI detection and text enhancement capabilities.",
+            "createdAt": "2024-12-20T07:26:39.110Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/ai-humanizer-mcp-server"
+        },
+        {
+            "qualifiedName": "pocketbase-server",
+            "displayName": "PocketBase Server",
+            "description": "An MCP server for interacting with PocketBase databases, offering advanced database operations and schema management.",
+            "createdAt": "2024-12-20T07:58:02.994Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/pocketbase-server"
+        },
+        {
+            "qualifiedName": "mcp-memory-libsql",
+            "displayName": "LibSQL Memory",
+            "description": "High-performance vector search and persistent memory using libSQL.",
+            "createdAt": "2025-01-15T05:46:56.112Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/mcp-memory-libsql"
+        },
+        {
+            "qualifiedName": "@sanderkooger/mcp-server-ragdocs",
+            "displayName": "RAG Documentation Server",
+            "description": "Enhance AI responses with relevant documentation by retrieving and processing information through vector search. Build documentation-aware AI assistants and create context-aware tooling for developers with ease.",
+            "createdAt": "2025-03-10T11:04:26.818Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@sanderkooger/mcp-server-ragdocs"
+        },
+        {
+            "qualifiedName": "arxiv-mcp-server",
+            "displayName": "ArXiv Server",
+            "description": "Enable AI assistants to search and access arXiv papers through a simple MCP interface.",
+            "createdAt": "2024-12-19T16:25:22.557Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/arxiv-mcp-server"
+        },
+        {
+            "qualifiedName": "@qianniuspace/mcp-sentry",
+            "displayName": "MCP-Sentry",
+            "description": "Retrieve and analyze issues from Sentry.io to enhance your debugging process. Inspect error reports, stack traces, and other critical information seamlessly. Streamline your error management workflow with easy access to detailed issue insights.",
+            "createdAt": "2025-03-06T13:13:45.032Z",
+            "useCount": 8,
+            "homepage": "https://smithery.ai/server/@qianniuspace/mcp-sentry"
+        },
+        {
+            "qualifiedName": "@minipuft/claude-prompts-mcp",
+            "displayName": "Claude Custom Prompts",
+            "description": "Define and utilize custom prompts in markdown format to enhance your interactions with Claude. Streamline complex tasks into manageable steps with a flexible, template-based prompt system. Experience improved error handling and transport configurations for seamless operation.",
+            "createdAt": "2025-03-12T12:19:39.972Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@minipuft/claude-prompts-mcp"
+        },
+        {
+            "qualifiedName": "@kjozsa/jenkins-mcp",
+            "displayName": "Jenkins MCP",
+            "description": "Manage Jenkins operations efficiently.",
+            "createdAt": "2025-02-21T15:14:18.677Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@kjozsa/jenkins-mcp"
+        },
+        {
+            "qualifiedName": "@integromat/make-mcp-server",
+            "displayName": "Make MCP Server",
+            "description": "Transform your Make scenarios into callable tools for AI assistants. Leverage your existing automation workflows while enabling AI systems to trigger and interact with them seamlessly.",
+            "createdAt": "2025-03-11T04:00:37.084Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@integromat/make-mcp-server"
+        },
+        {
+            "qualifiedName": "@Ashish-Bansal/playwright-mcp",
+            "displayName": "Playwright MCP",
+            "description": "Connect AI assistants directly to your DOM for faster, smarter test automation. Enable AI tools to see your application structure, generating precise Playwright tests based on real elements rather than descriptions alone.",
+            "createdAt": "2025-03-10T20:20:50.704Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@Ashish-Bansal/playwright-mcp"
+        },
+        {
+            "qualifiedName": "@liuyoshio/mcp-compass",
+            "displayName": "Compass",
+            "description": "MCP Discovery & Recommendation Service that helps explore Model Context Protocol servers using natural language queries.",
+            "createdAt": "2024-12-27T11:52:37.041Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@liuyoshio/mcp-compass"
+        },
+        {
+            "qualifiedName": "@0xKoda/eth-mcp",
+            "displayName": "Ethereum RPC Server",
+            "description": "Interact with the Ethereum blockchain seamlessly. Query blockchain data like account balances and gas prices through standardized JSON-RPC methods. Enhance your AI applications with real-time Ethereum data access.",
+            "createdAt": "2025-03-09T18:00:30.875Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/@0xKoda/eth-mcp"
+        },
+        {
+            "qualifiedName": "systemprompt-mcp-notion",
+            "displayName": "SystemPrompt Notion",
+            "description": "Seamlessly integrate Notion into AI workflows, enabling interaction with pages, databases, and comments.",
+            "createdAt": "2025-01-16T11:56:35.405Z",
+            "useCount": 7,
+            "homepage": "https://smithery.ai/server/systemprompt-mcp-notion"
+        },
+        {
+            "qualifiedName": "@chanmeng666/google-news-server",
+            "displayName": "Google News",
+            "description": "Search and categorize news articles from Google News via SerpAPI.",
+            "createdAt": "2025-01-01T06:33:05.922Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@chanmeng666/google-news-server"
+        },
+        {
+            "qualifiedName": "@imankamyabi/dynamodb-mcp-server",
+            "displayName": "DynamoDB Server",
+            "description": "Manage Amazon DynamoDB resources with table and capacity management tools.",
+            "createdAt": "2025-01-08T07:01:45.786Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@imankamyabi/dynamodb-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-search-linkup",
+            "displayName": "Linkup Search",
+            "description": "Provides web search capability using the LinkupClient to fetch real-time information.",
+            "createdAt": "2025-01-01T08:56:48.212Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/mcp-search-linkup"
+        },
+        {
+            "qualifiedName": "@MushroomFleet/deeplucid3d-mcp",
+            "displayName": "DeepLucid3D UCPF Server",
+            "description": "Enable advanced cognitive analysis and creative problem-solving with structured cognitive tools. Assess cognitive states, generate novel perspectives, and decompose complex problems for effective solutions. Enhance your AI capabilities with a powerful framework for structured thinking.",
+            "createdAt": "2025-03-09T20:07:27.679Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@MushroomFleet/deeplucid3d-mcp"
+        },
+        {
+            "qualifiedName": "@Deploya-labs/mcp-resend",
+            "displayName": "Email sending (used by Deploya.dev)",
+            "description": "Compose and send emails directly from your LLM applications without the hassle of copying and pasting. Integrate seamlessly with Resend's API to streamline your email communication. Enhance your productivity by letting your agents handle email tasks effortlessly.",
+            "createdAt": "2025-03-06T03:32:10.748Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@Deploya-labs/mcp-resend"
+        },
+        {
+            "qualifiedName": "@CamdenClark/anki-mcp-server",
+            "displayName": "Anki Integration Server",
+            "description": "Integrate seamlessly with Anki to manage your decks and notes. Create, list, and access Anki decks and note models effortlessly through a simple API. Enhance your Anki experience with powerful tools for note management and organization.",
+            "createdAt": "2025-03-11T01:00:36.574Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@CamdenClark/anki-mcp-server"
+        },
+        {
+            "qualifiedName": "@Laksh-star/mcp-server-tmdb",
+            "displayName": "TMDB Server",
+            "description": "This server integrates with The Movie Database (TMDB) API to provide movie information, search capabilities, and recommendations.",
+            "createdAt": "2024-12-19T15:53:14.678Z",
+            "useCount": 6,
+            "homepage": "https://smithery.ai/server/@Laksh-star/mcp-server-tmdb"
+        },
+        {
+            "qualifiedName": "@ykhli/mcp-send-emails",
+            "displayName": "Email sending server",
+            "description": "Send emails directly from your LLM applications using Resend's API. Compose and dispatch emails seamlessly without manual copying and pasting.",
+            "createdAt": "2025-02-25T20:20:24.366Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@ykhli/mcp-send-emails"
+        },
+        {
+            "qualifiedName": "mcp-server-motherduck",
+            "displayName": "MotherDuck",
+            "description": "Connect and query MotherDuck and local DuckDB databases.",
+            "createdAt": "2025-01-10T16:04:59.188Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/mcp-server-motherduck"
+        },
+        {
+            "qualifiedName": "@zick987/mcp",
+            "displayName": "MCP Server",
+            "description": "Integrate your applications with real-world data and tools seamlessly. Access files, databases, and APIs while leveraging the power of language models to enhance your workflows. Simplify complex interactions and automate tasks with a standardized protocol.",
+            "createdAt": "2025-03-12T06:55:54.553Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@zick987/mcp"
+        },
+        {
+            "qualifiedName": "@Maxteabag/githubworkflowmcp",
+            "displayName": "GitHub Workflow Debugger",
+            "description": "Diagnose and fix GitHub Actions workflow failures using a structured decision tree. Fetch workflow run information, analyze failures, and receive actionable solutions to streamline your CI/CD process.",
+            "createdAt": "2025-03-09T16:36:46.703Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@Maxteabag/githubworkflowmcp"
+        },
+        {
+            "qualifiedName": "@bartekke8it56w2/new-mcp",
+            "displayName": "Gemini Thinking Server",
+            "description": "Leverage advanced analytical thinking capabilities to break down complex problems and generate thoughtful responses. Enhance your problem-solving process with insights, confidence levels, and alternative approaches, all while maintaining session persistence for ongoing analysis.",
+            "createdAt": "2025-03-09T08:01:03.275Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@bartekke8it56w2/new-mcp"
+        },
+        {
+            "qualifiedName": "@anaisbetts/mcp-youtube",
+            "displayName": "YouTube",
+            "description": "YouTube MCP Server utilizes yt-dlp to download subtitles from YouTube and interfaces with Claude.ai.",
+            "createdAt": "2024-12-13T15:46:55.625Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@anaisbetts/mcp-youtube"
+        },
+        {
+            "qualifiedName": "zig-mcp-server",
+            "displayName": "Zig Server",
+            "description": "Enhance AI capabilities with Zig language tooling, code analysis, and documentation.",
+            "createdAt": "2025-01-10T06:39:16.460Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/zig-mcp-server"
+        },
+        {
+            "qualifiedName": "@M-Gonzalo/cosa-sai",
+            "displayName": "Gemini Docs Server",
+            "description": "Access documentation for various technologies using the Gemini API. Leverage a curated knowledge base for tailored responses to complex queries.",
+            "createdAt": "2025-02-28T00:01:09.309Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@M-Gonzalo/cosa-sai"
+        },
+        {
+            "qualifiedName": "@markomitranic/mcp-vegalite-server",
+            "displayName": "Data Visualization Server",
+            "description": "Visualize data using Vega-Lite syntax and save data tables for later use. Fork of https://github.com/isaacwasserman/mcp-vegalite-server",
+            "createdAt": "2025-02-13T09:45:53.106Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@markomitranic/mcp-vegalite-server"
+        },
+        {
+            "qualifiedName": "@devlimelabs/meilisearch-ts-mcp",
+            "displayName": "Meilisearch MCP Server",
+            "description": "Enable AI assistants to interact with Meilisearch through a standardized interface.",
+            "createdAt": "2025-02-25T20:00:51.448Z",
+            "useCount": 5,
+            "homepage": "https://smithery.ai/server/@devlimelabs/meilisearch-ts-mcp"
+        },
+        {
+            "qualifiedName": "@gluneau/hive-mcp-server",
+            "displayName": "Hive MCP Server",
+            "description": "Connect AI assistants to the Hive blockchain. Fetch account details, retrieve posts, vote on content, and send tokens securely. Enhance your AI's capabilities with blockchain interactions and cryptographic functions.",
+            "createdAt": "2025-03-10T19:04:45.534Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@gluneau/hive-mcp-server"
+        },
+        {
+            "qualifiedName": "x-mcp",
+            "displayName": "X(Twitter) MCP Server",
+            "description": "A server to create drafts of X(Twitter) posts, threads using LLMs and post directly from the chat.",
+            "createdAt": "2024-12-19T15:50:19.247Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/x-mcp"
+        },
+        {
+            "qualifiedName": "@chuanmingliu/servers",
+            "displayName": "Model Context Protocol Servers",
+            "description": "Showcase versatile implementations of the Model Context Protocol for secure LLM access to tools and data.",
+            "createdAt": "2025-03-01T15:38:27.253Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@chuanmingliu/servers"
+        },
+        {
+            "qualifiedName": "@tomekkorbak/oura-mcp-server",
+            "displayName": "Oura API Integration Server",
+            "description": "Access sleep, readiness, and resilience data from the Oura API.",
+            "createdAt": "2025-02-28T01:01:03.610Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@tomekkorbak/oura-mcp-server"
+        },
+        {
+            "qualifiedName": "@leafeye/lunchmoney-mcp-server",
+            "displayName": "Lunchmoney MCP Server",
+            "description": "Interact with your Lunchmoney transactions and budgets through AI assistants.",
+            "createdAt": "2025-02-15T12:42:22.976Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@leafeye/lunchmoney-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-scholarly",
+            "displayName": "Scholarly Search",
+            "description": "Search for academic articles in arXiv.",
+            "createdAt": "2025-01-01T06:36:08.624Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/mcp-scholarly"
+        },
+        {
+            "qualifiedName": "@pbteja1998/sourcesyncai-mcp",
+            "displayName": "SourceSync.ai MCP Server",
+            "description": "Integrate your AI models with SourceSync.ai's knowledge management platform. Seamlessly manage, ingest, and search your documents while leveraging external services for enhanced data retrieval. Empower your AI with organized knowledge and efficient document management.",
+            "createdAt": "2025-03-03T13:34:49.721Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@pbteja1998/sourcesyncai-mcp"
+        },
+        {
+            "qualifiedName": "@thadius83/mcp-server-openai",
+            "displayName": "OpenAI MCP Server",
+            "description": "Query OpenAI models directly from Claude using the MCP protocol. Integrate with multiple models for enhanced responses.",
+            "createdAt": "2025-02-20T13:00:30.869Z",
+            "useCount": 4,
+            "homepage": "https://smithery.ai/server/@thadius83/mcp-server-openai"
+        },
+        {
+            "qualifiedName": "@noahlozevski/mcp-idb",
+            "displayName": "iOS Development Bridge Integration",
+            "description": "Automate iOS device management and test execution seamlessly. Leverage the power of MCP to enhance your iOS development workflow with automated interactions and testing capabilities.",
+            "createdAt": "2025-03-07T22:12:01.428Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@noahlozevski/mcp-idb"
+        },
+        {
+            "qualifiedName": "@cheny-alf/filesystem-server",
+            "displayName": "Filesystem Server",
+            "description": "Access and manipulate files seamlessly with our server. Streamline your workflows by integrating file operations directly into your applications. Enhance your projects with robust file handling capabilities.",
+            "createdAt": "2025-03-03T14:23:30.795Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@cheny-alf/filesystem-server"
+        },
+        {
+            "qualifiedName": "airtable-mcp-server",
+            "displayName": "Airtable Server",
+            "description": "A Model Context Protocol server that provides read and write access to Airtable databases.",
+            "createdAt": "2024-12-19T15:52:33.058Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/airtable-mcp-server"
+        },
+        {
+            "qualifiedName": "@wildfly-extras/wildfly-mcp-server",
+            "displayName": "WildFly MCP Server",
+            "description": "Integrate with your AI chatbot to interact with WildFly servers using natural language.",
+            "createdAt": "2025-02-12T13:22:25.524Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@wildfly-extras/wildfly-mcp-server"
+        },
+        {
+            "qualifiedName": "@timeheater/penumbra-mcp",
+            "displayName": "Penumbra Blockchain",
+            "description": "Interact with the Penumbra blockchain for privacy-preserving features.",
+            "createdAt": "2025-01-07T03:37:38.533Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@timeheater/penumbra-mcp"
+        },
+        {
+            "qualifiedName": "@bsmi021/mcp-file-context-server",
+            "displayName": "File Context Server",
+            "description": "Enable your LLMs to read, search, and analyze code files with advanced caching and real-time file watching capabilities. Streamline your code analysis and improve quality metrics effortlessly. Enhance your development workflow with powerful file operations and smart caching features.",
+            "createdAt": "2025-03-11T09:00:46.084Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@bsmi021/mcp-file-context-server"
+        },
+        {
+            "qualifiedName": "@imlewc/elasticsearch7-mcp-server",
+            "displayName": "Elasticsearch 7.x MCP Server",
+            "description": "Interact seamlessly with Elasticsearch 7.x using a standardized MCP protocol. Perform basic operations and advanced search functionalities effortlessly through any MCP client. Enhance your applications with powerful Elasticsearch capabilities without diving into complex API calls.",
+            "createdAt": "2025-03-06T10:25:57.538Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@imlewc/elasticsearch7-mcp-server"
+        },
+        {
+            "qualifiedName": "@taylor-lindores-reeves/mcp-github-projects",
+            "displayName": "MCP GitHub Projects",
+            "description": "Streamline your project management with integrated tools and resources. Enhance collaboration and efficiency by leveraging the power of the Model Context Protocol to connect your projects with real-world data and actions. Simplify workflows and improve productivity with a standardized approach to managing your GitHub projects.",
+            "createdAt": "2025-03-04T18:25:22.741Z",
+            "useCount": 3,
+            "homepage": "https://smithery.ai/server/@taylor-lindores-reeves/mcp-github-projects"
+        },
+        {
+            "qualifiedName": "mcp-server-replicate",
+            "displayName": "Replicate",
+            "description": "Access Replicate models and predictions.",
+            "createdAt": "2025-01-08T07:05:04.050Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/mcp-server-replicate"
+        },
+        {
+            "qualifiedName": "@zick987/mcpxiaohua",
+            "displayName": "Xiaohua",
+            "description": "Enhance your applications with powerful language model capabilities. Seamlessly integrate real-world data and tools to create dynamic, context-aware interactions. Empower your agents to perform complex tasks effortlessly.",
+            "createdAt": "2025-03-12T11:52:15.328Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@zick987/mcpxiaohua"
+        },
+        {
+            "qualifiedName": "@CaesarYangs/prometheus_mcp_server",
+            "displayName": "Prometheus MCP Server",
+            "description": "Retrieve and analyze vast amounts of metric data from Prometheus databases. Execute complex queries and gain insights into metric usage patterns with enhanced control. Simplify your data exploration and analysis tasks through a dedicated MCP server interface.",
+            "createdAt": "2025-03-10T01:00:40.071Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@CaesarYangs/prometheus_mcp_server"
+        },
+        {
+            "qualifiedName": "@buryhuang/mcp-hubspot",
+            "displayName": "HubSpot",
+            "description": "Provides integration with HubSpot CRM for accessing contacts, companies, and recent engagements.",
+            "createdAt": "2025-01-15T05:48:44.845Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@buryhuang/mcp-hubspot"
+        },
+        {
+            "qualifiedName": "@jasonjmcghee/webmcp",
+            "displayName": "WebMCP",
+            "description": "Enable websites to seamlessly share tools, resources, and prompts with client-side LLMs. Enhance user experience by allowing LLMs to access a variety of functionalities without the need for API keys. Connect to multiple WebMCP-enabled sites effortlessly for a richer interaction.",
+            "createdAt": "2025-03-09T18:13:27.336Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@jasonjmcghee/webmcp"
+        },
+        {
+            "qualifiedName": "@InstantMCP/instantmcp-server",
+            "displayName": "InstantMCP Server",
+            "description": "Manage and integrate your installed MCPs seamlessly. Enhance your applications with dynamic context and real-time data access through a standardized interface. Simplify your development process by leveraging powerful tools and resources with ease.",
+            "createdAt": "2025-03-11T23:35:56.890Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@InstantMCP/instantmcp-server"
+        },
+        {
+            "qualifiedName": "@smithery-ai/aws-kb-retrieval-server",
+            "displayName": "AWS Knowledge Base Retrieval",
+            "description": "Retrieve information from the AWS Knowledge Base using queries and Knowledge Base IDs.",
+            "createdAt": "2025-02-25T14:40:56.604Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@smithery-ai/aws-kb-retrieval-server"
+        },
+        {
+            "qualifiedName": "@neurelo-connect/neurelo-connect",
+            "displayName": "Clickhouse and PostgreSQL with Neurelo Connect",
+            "description": "Interact with ClickHouse and PostgreSQL databases through Neurelo Connect.",
+            "createdAt": "2025-03-05T16:50:10.833Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@neurelo-connect/neurelo-connect"
+        },
+        {
+            "qualifiedName": "@shaileshahuja/github-pr-mcp",
+            "displayName": "GitHub PR Comments Server",
+            "description": "Fetch GitHub Pull Request comments effortlessly. Retrieve structured comments, including file paths and replies, using your GitHub personal access token. Enhance your development workflow with easy access to PR discussions.",
+            "createdAt": "2025-03-09T08:54:54.527Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@shaileshahuja/github-pr-mcp"
+        },
+        {
+            "qualifiedName": "@lucyor/test-mcp-server",
+            "displayName": "Test MCP Service",
+            "description": "Provide a simple and effective way to implement the Model Context Protocol. Easily integrate your applications with external data and tools, enhancing their capabilities. Start building your own MCP server with this example implementation.",
+            "createdAt": "2025-03-08T07:00:24.197Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@lucyor/test-mcp-server"
+        },
+        {
+            "qualifiedName": "@smithery-ai/gdrive",
+            "displayName": "Google Drive",
+            "description": "Access and search through your Google Drive files",
+            "createdAt": "2024-12-13T15:46:55.912Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@smithery-ai/gdrive"
+        },
+        {
+            "qualifiedName": "mcp-jina-reader",
+            "displayName": "Jina Reader MCP Server",
+            "description": "Fetch the content of a remote URL as Markdown with Jina Reader",
+            "createdAt": "2024-12-19T15:58:16.081Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/mcp-jina-reader"
+        },
+        {
+            "qualifiedName": "@tokenizin/mcp-npx-fetch",
+            "displayName": "NPX Fetch",
+            "description": "A CLI tool for fetching and processing content using the Model Context Protocol, supporting HTML, JSON, plain text, and Markdown formats.",
+            "createdAt": "2024-12-25T17:29:55.831Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@tokenizin/mcp-npx-fetch"
+        },
+        {
+            "qualifiedName": "@zick987/mcpgupiao",
+            "displayName": "Gupiao",
+            "description": "Access real-time stock market data and perform trading operations seamlessly. Enhance your financial applications with powerful tools for analysis and decision-making.",
+            "createdAt": "2025-03-12T12:37:00.332Z",
+            "useCount": 2,
+            "homepage": "https://smithery.ai/server/@zick987/mcpgupiao"
+        },
+        {
+            "qualifiedName": "@hagsmand/mcp-server-starrocks",
+            "displayName": "StarRocks MCP Server",
+            "description": "Integrate StarRocks with your applications seamlessly. Access and manipulate data efficiently using a standardized protocol for enhanced performance and flexibility.",
+            "createdAt": "2025-03-06T14:16:50.308Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@hagsmand/mcp-server-starrocks"
+        },
+        {
+            "qualifiedName": "@krzko/google-cloud-mcp",
+            "displayName": "Google Cloud Services Integration",
+            "description": "Connect to Google Cloud services to query logs, execute SQL queries, retrieve metrics, and analyze traces. Enhance your debugging and monitoring capabilities with natural language support for seamless interaction with your cloud resources.",
+            "createdAt": "2025-03-08T22:47:52.457Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@krzko/google-cloud-mcp"
+        },
+        {
+            "qualifiedName": "@strowk/mcp-k8s",
+            "displayName": "MCP K8S Go",
+            "description": "MCP server and library for Kubernetes, providing tools to list contexts, pods, events, services, and fetch pod logs in specified namespaces.",
+            "createdAt": "2024-12-13T15:46:48.481Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@strowk/mcp-k8s"
+        },
+        {
+            "qualifiedName": "@mario-andreschak/mcp-abap-abap-adt-api",
+            "displayName": "ABAP-ADT-API MCP-Server",
+            "description": "1:1 wrapping of abap-adt-api into a MCP server.",
+            "createdAt": "2025-02-06T12:38:57.842Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@mario-andreschak/mcp-abap-abap-adt-api"
+        },
+        {
+            "qualifiedName": "@sunwood-ai-labs/luma-mcp-server",
+            "displayName": "Luma MCP Server",
+            "description": "A Model Context Protocol server for Luma AI video generation",
+            "createdAt": "2024-12-25T17:28:49.664Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@sunwood-ai-labs/luma-mcp-server"
+        },
+        {
+            "qualifiedName": "@kj455/mcp-kibela",
+            "displayName": "Kibela Integration Server",
+            "description": "Integrate with Kibela to search and fetch notes seamlessly.",
+            "createdAt": "2025-02-24T01:58:32.770Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@kj455/mcp-kibela"
+        },
+        {
+            "qualifiedName": "mcp-postman",
+            "displayName": "Postman Runner",
+            "description": "Run Postman collections to execute API tests and get detailed results.",
+            "createdAt": "2025-01-01T06:41:34.707Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/mcp-postman"
+        },
+        {
+            "qualifiedName": "@askjohngeorge/mcp-doc-scraper",
+            "displayName": "Doc Scraper",
+            "description": "Scrape documentation from any web URL and convert it into markdown format. Save the converted documentation to your specified output path effortlessly. Enhance your documentation management with this easy-to-use server integration.",
+            "createdAt": "2025-03-12T11:00:50.523Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@askjohngeorge/mcp-doc-scraper"
+        },
+        {
+            "qualifiedName": "@kazuph/mcp-browser-tabs",
+            "displayName": "Browser Tabs",
+            "description": "Manage and retrieve information about Chrome browser tabs.",
+            "createdAt": "2025-01-08T07:08:09.896Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@kazuph/mcp-browser-tabs"
+        },
+        {
+            "qualifiedName": "@philipp-eisen/modal-mcp-toolbox",
+            "displayName": "Modal MCP Toolbox",
+            "description": "A collection of tools that run on modal. Currently:  \n\n- `run_python_code_in_sandbox`  \n- `generate_flux_image`  ",
+            "createdAt": "2025-02-14T22:00:32.894Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@philipp-eisen/modal-mcp-toolbox"
+        },
+        {
+            "qualifiedName": "@jason-tan-swe/railway-mcp",
+            "displayName": "Railway MCP Server",
+            "description": "Manage your Railway infrastructure effortlessly using natural language. Deploy, configure, and monitor your services autonomously and securely with the help of Claude and other MCP clients.",
+            "createdAt": "2025-03-03T05:45:38.624Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@jason-tan-swe/railway-mcp"
+        },
+        {
+            "qualifiedName": "@AbdelStark/nostr-mcp",
+            "displayName": "Nostr MCP Server",
+            "description": "Enable AI models to post notes and interact with the Nostr network.",
+            "createdAt": "2025-01-30T14:00:12.783Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@AbdelStark/nostr-mcp"
+        },
+        {
+            "qualifiedName": "@MushroomFleet/transcriptiontools-mcp",
+            "displayName": "Transcription Tools",
+            "description": "Enhance your transcription workflow with intelligent processing capabilities. Automatically repair errors, format transcripts naturally, and generate concise summaries to save time and improve accuracy.",
+            "createdAt": "2025-03-10T00:17:41.238Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@MushroomFleet/transcriptiontools-mcp"
+        },
+        {
+            "qualifiedName": "@boorich/mcp-human-loop",
+            "displayName": "Human Loop Server",
+            "description": "Manage human-agent collaboration efficiently by determining when human intervention is necessary in AI operations. Utilize a sequential scoring system to evaluate requests across multiple dimensions, ensuring that only truly complex or sensitive cases reach human operators. Enhance decision-making transparency and system learning through tracked outcomes and adjustable thresholds.",
+            "createdAt": "2025-03-09T18:00:38.855Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@boorich/mcp-human-loop"
+        },
+        {
+            "qualifiedName": "@8bitsats/solanatradingserver",
+            "displayName": "Solana Trading Server",
+            "description": "Facilitate seamless Solana token trading with our server. Create wallets, check balances, and execute swaps effortlessly through a user-friendly interface. Enhance your trading experience with real-time transaction tracking and customizable slippage options.",
+            "createdAt": "2025-03-09T21:49:54.406Z",
+            "useCount": 1,
+            "homepage": "https://smithery.ai/server/@8bitsats/solanatradingserver"
+        },
+        {
+            "qualifiedName": "mcp-minecraft",
+            "displayName": "Minecraft",
+            "description": "A Model Context Protocol (MCP) integration for Minecraft enabling AI assistants to interact with a Minecraft server.",
+            "createdAt": "2024-12-19T16:28:22.478Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/mcp-minecraft"
+        },
+        {
+            "qualifiedName": "@1259187996/time",
+            "displayName": "Time Server",
+            "description": "Provide real-time information to large language models. Access the current time effortlessly through a simple API. Enhance your applications with accurate time data for better context and functionality.",
+            "createdAt": "2025-03-07T08:37:04.962Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/@1259187996/time"
+        },
+        {
+            "qualifiedName": "@Beyond-Network-AI/beyond-mcp-server",
+            "displayName": "Beyond MCP Server",
+            "description": "Access social platform data and onchain data seamlessly. Integrate multiple social media platforms with ease and extend functionality as needed. Optimize your LLM interactions with well-formatted context and flexible transport options.",
+            "createdAt": "2025-03-11T05:00:30.254Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/@Beyond-Network-AI/beyond-mcp-server"
+        },
+        {
+            "qualifiedName": "code-snippet-server",
+            "displayName": "Code Snippet",
+            "description": "Manage and store code snippets across different programming languages.",
+            "createdAt": "2025-01-10T06:40:48.638Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/code-snippet-server"
+        },
+        {
+            "qualifiedName": "@lumile/mercadolibre-mcp",
+            "displayName": "MercadoLibre MCP Server",
+            "description": "Access MercadoLibre's API to search products, retrieve reviews, and check seller reputations.",
+            "createdAt": "2025-01-31T20:32:23.077Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/@lumile/mercadolibre-mcp"
+        },
+        {
+            "qualifiedName": "@osaas/mcp-server",
+            "displayName": "Eyevinn Open Source Cloud MCP Server",
+            "description": "MCP server for using the Eyevinn Open Source Cloud API, enabling creation of solutions based on open web services.",
+            "createdAt": "2024-12-27T15:35:22.235Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/@osaas/mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-web-auto",
+            "displayName": "AOAI Web Browsing",
+            "description": "MCP server implementation for web browsing automation using Azure OpenAI.",
+            "createdAt": "2024-12-20T07:59:38.399Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/mcp-web-auto"
+        },
+        {
+            "qualifiedName": "@alexgoller/illumio-mcp-server",
+            "displayName": "Illumio MCP Server",
+            "description": "Interact with your Illumio Policy Compute Engine using conversational AI. Manage workloads, labels, and analyze traffic flows effortlessly to enhance your security posture. Streamline your operations with programmatic access to critical workload management and security analysis features.",
+            "createdAt": "2025-03-11T12:01:21.218Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/@alexgoller/illumio-mcp-server"
+        },
+        {
+            "qualifiedName": "mcp-notes",
+            "displayName": "MCP Notes",
+            "description": "A simple note-taking MCP server for recording and managing notes with AI models.",
+            "createdAt": "2024-12-23T01:53:58.667Z",
+            "useCount": 0,
+            "homepage": "https://smithery.ai/server/mcp-notes"
+        },
+        {
+          "qualifiedName": "@felores/cloudinary-mcp-server",
+          "displayName": "Cloudinary Server",
+          "description": "Upload images and videos to Cloudinary.",
+          "createdAt": "2025-01-08T07:07:16.943Z",
+          "useCount": 0,
+          "homepage": "https://smithery.ai/server/@felores/cloudinary-mcp-server"
+      }
+    ]
+  }

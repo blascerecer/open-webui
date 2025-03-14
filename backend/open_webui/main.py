@@ -384,7 +384,7 @@ print(
  ██████╗ ██████╗ ███████╗███╗   ██╗    ██╗    ██╗███████╗██████╗ ██╗   ██╗██╗
 ██╔═══██╗██╔══██╗██╔════╝████╗  ██║    ██║    ██║██╔════╝██╔══██╗██║   ██║██║
 ██║   ██║██████╔╝█████╗  ██╔██╗ ██║    ██║ █╗ ██║█████╗  ██████╔╝██║   ██║██║
-██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██║   ██║██║
+██║   ██║██╔═══╝ ██╔══╝  ██║╚██╗██║    ██║███╗██║██╔══╝  ██╔══██╗██║   ██║██║3
 ╚██████╔╝██║     ███████╗██║ ╚████║    ╚███╔███╔╝███████╗██████╔╝╚██████╔╝██║
  ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═══╝     ╚══╝╚══╝ ╚══════╝╚═════╝  ╚═════╝ ╚═╝
 
@@ -986,34 +986,58 @@ async def chat_completion(
     form_data: dict,
     user=Depends(get_verified_user),
 ):
+    import traceback
+    import json
+    
+    log.info(f"Received chat completion request from user: {user.id}")
+    log.debug(f"Request form data: {json.dumps(form_data, default=str)}")
+    
+    # Log model state
     if not request.app.state.MODELS:
+        log.info("No models found, loading models")
         await get_all_models(request, user=user)
+    else:
+        log.debug(f"Available models: {list(request.app.state.MODELS.keys())}")
 
     model_item = form_data.pop("model_item", {})
     tasks = form_data.pop("background_tasks", None)
+    
+    log.debug(f"Using model_item: {model_item}")
+    log.debug(f"Background tasks: {tasks}")
 
     try:
         if not model_item.get("direct", False):
             model_id = form_data.get("model", None)
+            log.debug(f"Looking up model by ID: {model_id}")
+            
             if model_id not in request.app.state.MODELS:
-                raise Exception("Model not found")
+                log.error(f"Model not found: {model_id}")
+                raise Exception(f"Model not found: {model_id}")
 
             model = request.app.state.MODELS[model_id]
+            log.debug(f"Found model: {model_id}")
+            
             model_info = Models.get_model_by_id(model_id)
+            log.debug(f"Model info: {model_info}")
 
             # Check if user has access to the model
             if not BYPASS_MODEL_ACCESS_CONTROL and user.role == "user":
+                log.debug(f"Checking model access for user {user.id} with role {user.role}")
                 try:
                     check_model_access(user, model)
+                    log.debug("Model access granted")
                 except Exception as e:
+                    log.error(f"Model access denied: {str(e)}")
                     raise e
         else:
+            log.debug("Using direct model")
             model = model_item
             model_info = None
 
             request.state.direct = True
             request.state.model = model
 
+        log.debug("Creating metadata")
         metadata = {
             "user_id": user.id,
             "chat_id": form_data.pop("chat_id", None),
@@ -1036,28 +1060,42 @@ async def chat_completion(
                 else {}
             ),
         }
+        log.debug(f"Metadata created: {json.dumps({k: str(v) for k, v in metadata.items()}, indent=2)}")
 
         request.state.metadata = metadata
         form_data["metadata"] = metadata
 
-        form_data, metadata, events = await process_chat_payload(
-            request, form_data, user, metadata, model
-        )
+        log.info("Processing chat payload")
+        try:
+            form_data, metadata, events = await process_chat_payload(
+                request, form_data, user, metadata, model
+            )
+            log.debug("Chat payload processed successfully")
+        except Exception as e:
+            log.error(f"Error in process_chat_payload: {str(e)}")
+            log.error(traceback.format_exc())
+            raise e
 
     except Exception as e:
-        log.debug(f"Error processing chat payload: {e}")
+        log.error(f"Error processing chat payload: {str(e)}")
+        log.error(traceback.format_exc())
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=str(e),
         )
 
     try:
+        log.info("Calling chat completion handler")
         response = await chat_completion_handler(request, form_data, user)
+        log.debug("Chat completion handler returned successfully")
 
+        log.info("Processing chat response")
         return await process_chat_response(
             request, response, form_data, user, metadata, model, events, tasks
         )
     except Exception as e:
+        log.error(f"Error in chat completion handler or response processing: {str(e)}")
+        log.error(traceback.format_exc())
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail=str(e),
@@ -1067,7 +1105,6 @@ async def chat_completion(
 # Alias for chat_completion (Legacy)
 generate_chat_completions = chat_completion
 generate_chat_completion = chat_completion
-
 
 @app.post("/api/chat/completed")
 async def chat_completed(
