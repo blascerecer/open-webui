@@ -1,5 +1,3 @@
-I'll modify the README to include the video link that shows how to set up the system. Here's the updated version:
-
 # Open WebUI with MCP Access
 
 This repository provides Open WebUI with MCP (Model Control Protocol) bridge access to connect with various AI models.
@@ -11,12 +9,19 @@ Watch our setup video tutorial: [https://www.youtube.com/watch?v=F0bI2RsuzMI](ht
 ### 1. Configuration Steps
 
 #### Configure MCP Bridge
-1. Add your OpenAI API key to the `mcp-bridge/config.json`:
+1. Copy the example configuration files:
+   ```bash
+   cp mcp-bridge/config.json.example mcp-bridge/config.json 
+   cp mcp-bridge/mcp_config.json.example mcp-bridge/mcp_config.json
+   ```
+2. Update the `config.json` with your OpenAI API key:
    ```json
    {
      "openai_api_key": "your-api-key"
    }
    ```
+   Replace "your-api-key" with your actual OpenAI API key.
+3. No modifications needed for `mcp_config.json` - the default settings should work fine.
 
 #### Configure Web UI
 1. Sign in to Web UI locally

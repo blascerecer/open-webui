@@ -14,7 +14,6 @@ __pycache__/
 *$py.class
 mcp-bridge/config.json
 mcp-bridge/mcp_config.json
-mcp-bridge/compose.yml
 
 # C extensions
 *.so
