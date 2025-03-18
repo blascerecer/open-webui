@@ -1,0 +1,31 @@
+imagePullSecrets:
+  - name: github-cred
+
+image:
+  repository: gcr.io/blagent-prod/open-webui
+  tag: main  # Use the specific tag or branch you want to deploy
+  pullPolicy: Always  # This ensures it always pulls the latest version
+
+service:
+  type: LoadBalancer  # Use LoadBalancer for GCP
+
+ingress:
+  enabled: false  # Set to true if you want to use GKE Ingress
+
+persistence:
+  enabled: true
+  storageClass: "standard"  # GCP standard storage class
+
+# Configure resources as needed
+resources:
+  requests:
+    cpu: 500m
+    memory: 512Mi
+  limits:
+    cpu: 1000m
+    memory: 1Gi
+
+# If you're connecting to Ollama or other services, specify their endpoints
+env:
+  OLLAMA_API_BASE_URL: "http://ollama-service:11434/api"
+  # Add other environment variables as needed
