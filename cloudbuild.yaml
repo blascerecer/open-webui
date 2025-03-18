@@ -1,0 +1,50 @@
+steps:
+# Build the container image
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['build', '-t', 'us-docker.pkg.dev/${PROJECT_ID}/open-webui/open-webui:latest', '.']
+  timeout: '1800s'
+
+# Push the container image to Artifact Registry
+- name: 'gcr.io/cloud-builders/docker'
+  args: ['push', 'us-docker.pkg.dev/${PROJECT_ID}/open-webui/open-webui:latest']
+
+# Deploy container image to GKE
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'apply'
+  - '-f'
+  - 'k8s-deployment.yaml'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=blagent-prod-cluster'
+
+# Update the deployment with the new image
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'set'
+  - 'image'
+  - 'deployment/open-webui'
+  - 'open-webui=us-docker.pkg.dev/${PROJECT_ID}/open-webui/open-webui:latest'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=blagent-prod-cluster'
+
+# Get service information
+- name: 'gcr.io/cloud-builders/kubectl'
+  args:
+  - 'get'
+  - 'service'
+  - 'open-webui-service'
+  - '-o'
+  - 'wide'
+  env:
+  - 'CLOUDSDK_COMPUTE_ZONE=us-central1-a'
+  - 'CLOUDSDK_CONTAINER_CLUSTER=blagent-prod-cluster'
+
+images:
+- 'us-docker.pkg.dev/${PROJECT_ID}/open-webui/open-webui:latest'
+
+timeout: '2400s'
+options:
+  machineType: 'N1_HIGHCPU_32'
+  diskSizeGb: '100'
