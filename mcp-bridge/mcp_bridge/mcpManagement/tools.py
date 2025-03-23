@@ -27,12 +27,24 @@ async def get_tools() -> dict[str, ListToolsResult]:
 @router.post("/{tool_name}/call")
 async def call_tool(tool_name: str, arguments: dict[str, Any] = {}) -> CallToolResult:
     """Call a tool"""
-
+    
+    logger.info(f"Calling tool: {tool_name} with arguments: {arguments}")
+    
     client = await ClientManager.get_client_from_tool(tool_name)
     if not client:
+        logger.error(f"Tool '{tool_name}' not found")
         raise HTTPException(status_code=404, detail=f"Tool '{tool_name}' not found")
-
-    return await client.call_tool(tool_name, arguments)
+    
+    try:
+        logger.info(f"Client found for tool '{tool_name}', attempting to call")
+        result = await client.call_tool(tool_name, arguments)
+        logger.info(f"Tool call result: {result}")
+        return result
+    except Exception as e:
+        logger.error(f"Error calling tool '{tool_name}': {str(e)}")
+        import traceback
+        logger.error(traceback.format_exc())
+        raise HTTPException(status_code=500, detail=f"Error calling tool '{tool_name}': {str(e)}")
 
 
 class UpdateMCPServersRequest(BaseModel):

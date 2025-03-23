@@ -21,8 +21,8 @@
 	import MCPConfigModal from '../MCPConfigModal.svelte';
 	
 	// Import the JSON file directly
-	import serverData from '$lib/utils/smithery-servers.json';
-	import { getMCPServers, updateActiveMCPServers, refreshActiveMCPs } from '$lib/apis/mcps';
+	import serverData from '$lib/utils/mcprun-servers.json';
+	import { getActiveMCPServers, addMCPServer, refreshActiveMCPs } from '$lib/apis/mcps';
 
 	const i18n = getContext('i18n');
 	const dispatch = createEventDispatcher();
@@ -92,14 +92,20 @@
 			// Wait a small tick for the UI to update
 			await new Promise(resolve => setTimeout(resolve, 10));
 			
+			// Get required configs from the server data
+			const requiredConfigs = 
+				mcp.meta?.requirements?.v0?.configs || [];
+			
 			// Prepare server object for the modal
 			selectedServer = {
 				id: mcp.qualifiedName,
-				name: mcp.displayName,
+				name: mcp.label,
 				description: mcp.description,
-				qualifiedName: mcp.qualifiedName, // Pass the qualifiedName to the modal
+				qualifiedName: mcp.qualifiedName,
 				url: mcp.url,
-				config: mcp.config || {} // Ensure config exists
+				config: mcp.config || {}, // Ensure config exists
+				requiredConfigs: requiredConfigs, // Pass the required configs
+				meta: mcp.meta // Pass all meta information
 			};
 
 			console.log("addMCP Selected server:", selectedServer);
@@ -129,6 +135,10 @@
 			// Wait a small tick for the UI to update
 			await new Promise(resolve => setTimeout(resolve, 10));
 			
+			// Get required configs from the server data
+			const requiredConfigs = 
+				mcpItem.meta?.requirements?.v0?.configs || [];
+			
 			// Prepare server object for the modal
 			selectedServer = {
 				id: mcpItem.qualifiedName,
@@ -136,7 +146,9 @@
 				description: mcpItem.description,
 				qualifiedName: mcpItem.qualifiedName,
 				url: mcpItem.url,
-				config: mcpItem.config || {} // Ensure config exists
+				config: mcpItem.config || {}, // Ensure config exists
+				requiredConfigs: requiredConfigs, // Pass the required configs
+				meta: mcpItem.meta // Pass all meta information
 			};
 			
 			console.log("editMCP Selected server:", selectedServer);
@@ -161,7 +173,7 @@
 			}
 			
 			// Update server configuration
-			await updateActiveMCPServers({}, [mcpValue]);
+			// await addMCPServer({}, [mcpValue]);
 			
 			// Close the dropdown before showing the toast
 			show = false;
@@ -194,13 +206,21 @@
 				throw new Error(`MCP with value ${mcpValue} not found`);
 			}
 			
-			// Create server configurations object
-			const serverConfigs = {
-				[mcpValue]: config
-			};
+			// The config parameter should already contain the configuration settings
+			// from the modal (e.g., {"spotifyClientId": "value", "spotifyClientSecret": "value"})
+			// This is what we need to pass directly to the addMCPServer call
 			
-			// Update active servers
-			await updateActiveMCPServers(serverConfigs, []);
+			// Get the qualified name (slug) of the server
+			const servletSlug = mcpItem.qualifiedName;
+			
+			// Call addMCPServer with the proper parameters
+			await addMCPServer(
+				mcpItem.label,  // name
+				servletSlug,    // servletSlug
+				config,         // configSettings - these are the API keys and other required configs
+				{ enabled: true, domains: [] },  // default network settings
+				{ enabled: true, volumes: {} }   // default filesystem settings
+			);
 			
 			// Hide config modal if open
 			showConfigModal = false;
@@ -284,13 +304,14 @@
 			isLoading = true;
 			
 			// Map the server data to the items format based on new schema
-			items = serverData.servers.map(server => ({
-				label: server.displayName,
-				value: server.qualifiedName,
-				qualifiedName: server.qualifiedName, // Store the qualified name for later use
-				description: server.description,
-				url: server.homepage,
-				popularity: server.useCount > 1000 ? "Popular" : (server.useCount > 100 ? "Common" : "New"),
+			// serverData is now an array instead of an object with servers property
+			items = serverData.map(server => ({
+				label: server.slug.split('/').pop() || server.slug, // Use last part of slug as display name
+				value: server.slug,
+				qualifiedName: server.slug, // Store the slug as qualifiedName for compatibility
+				description: server.meta?.description || '',
+				url: `https://smithery.ai/server/${server.slug}`, // Construct URL from slug
+				popularity: server.installation_count > 1000 ? "Popular" : (server.installation_count > 100 ? "Common" : "New"),
 				// Always set config to a default configuration object to trigger the modal
 				config: {
 					command: "npx",
@@ -298,11 +319,14 @@
 						"-y",
 						"@smithery/cli@latest",
 						"run",
-						server.qualifiedName,
+						server.slug,
 						"--config",
 						"\"{}\""
 					]
 				},
+				// Include any required configs from meta.requirements
+				meta: server.meta, // Pass the full meta object
+				requiredConfigs: server.meta?.requirements?.v0?.configs || [],
 				isActive: false // Initialize as inactive, will update when we fetch active MCPs
 			}));
 			

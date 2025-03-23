@@ -17,6 +17,10 @@ export const MCP_BRIDGE_HOSTNAME = browser ? (dev ? `${location.hostname}:8000` 
 export const MCP_BRIDGE_URL = browser ? (dev ? `http://${MCP_BRIDGE_HOSTNAME}` : ``) : ``;
 export const MCP_BRIDGE_API_BASE_URL = `${MCP_BRIDGE_URL}/`;
 
+export const MCP_RUN_PROFILE_NAME = 'your-profile-name'
+export const MCP_RUN_PROFILE_ID = 'your-profile-id'
+export const MCP_RUN_SESSION_ID = 'your-session-id'
+
 export const WEBUI_VERSION = APP_VERSION;
 export const WEBUI_BUILD_HASH = APP_BUILD_HASH;
 export const REQUIRED_OLLAMA_VERSION = '0.1.16';

@@ -31,6 +31,7 @@ async def chat_completions(
                 json=request.model_dump(exclude_defaults=True, exclude_none=True, exclude_unset=True),
             )
         ).text
+        logger.debug(f"response test1")
         logger.debug(text)
         try:
             response = CreateChatCompletionResponse.model_validate_json(text)

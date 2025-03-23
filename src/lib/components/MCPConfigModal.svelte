@@ -4,8 +4,7 @@
 	import { onMount, getContext } from 'svelte';
 	import Modal from './common/Modal.svelte';
 	import Spinner from './common/Spinner.svelte';
-	import { updateActiveMCPServers } from '$lib/apis/mcps';
-	import { fetchMCPDetails } from '$lib/apis/mcps';
+	import { addMCPServer } from '$lib/apis/mcps';
 
 	const i18n = getContext('i18n');
 	const dispatch = createEventDispatcher();
@@ -35,48 +34,59 @@
 				throw new Error("Server has no ID");
 			}
 			
-			// Try with qualifiedName if id doesn't work
-			const serverIdToUse = server.qualifiedName || server.id;
-			serverDetails = await fetchMCPDetails(serverIdToUse);
+			// Instead of fetching details via API, use the server info passed from MCPSelector
+			serverDetails = server;
 			
-			// Get config schema from connections if available
-			if (serverDetails && serverDetails.connections && serverDetails.connections.length > 0) {
-				const connection = serverDetails.connections.find(conn => conn.configSchema);
-				if (connection && connection.configSchema) {
-					configSchema = connection.configSchema;
-					
-					// Initialize config data with properties from schema, excluding command and args
-					if (configSchema.properties) {
-						// Start with existing config values
-						configData = { ...server.config };
-						
-						// Ensure all schema properties exist in configData with defaults
-						Object.entries(configSchema.properties)
-							.filter(([key]) => key !== 'command' && key !== 'args')
-							.forEach(([key, prop]) => {
-								if (configData[key] === undefined) {
-									// Set default value based on property type
-									if (prop.type === 'boolean') {
-										configData[key] = false;
-									} else if (prop.type === 'number') {
-										configData[key] = 0;
-									} else {
-										configData[key] = '';
-									}
-								}
-							});
-					}
-					
-					// Store the schema for display purposes
-					currentConfig = JSON.stringify(configSchema, null, 2);
-				}
-			} else {
-				// Fallback to basic config if no schema available
+			// IMPORTANT: Reset configData completely before initializing with new server config
+			configData = {};
+			configSchema = null;
+			currentConfig = null;
+			
+			// Initialize config data with base settings
+			if (server.config) {
 				configData = { ...server.config };
-				currentConfig = JSON.stringify(server.config, null, 2);
+			}
+			
+			// Check if server has requirements with config fields
+			if (server.requiredConfigs && server.requiredConfigs.length > 0) {
+				// Create a schema from the requirements
+				configSchema = {
+					properties: {}
+				};
+				
+				// Process each required config field
+				server.requiredConfigs.forEach(configField => {
+					// Add the field to schema properties
+					configSchema.properties[configField.key] = {
+						type: "string",
+						description: configField.type?.description || '',
+						required: configField.required
+					};
+					
+					// Set default value in configData if not already set
+					if (configData[configField.key] === undefined) {
+						// Use example value if provided, otherwise empty string
+						configData[configField.key] = configField.value || '';
+					}
+				});
+				
+				// If any fields are marked required, add them to the required array
+				const requiredFields = server.requiredConfigs
+					.filter(field => field.required)
+					.map(field => field.key);
+					
+				if (requiredFields.length > 0) {
+					configSchema.required = requiredFields;
+				}
+				
+				// Store the schema for display purposes
+				currentConfig = JSON.stringify(configSchema, null, 2);
+			} else {
+				// Fallback to basic config if no requirements available
+				currentConfig = JSON.stringify(server.config || {}, null, 2);
 			}
 		} catch (error) {
-			console.error('Failed to fetch MCP details:', error);
+			console.error('Failed to initialize MCP config:', error);
 			
 			toast.error(`Failed to load configuration for ${server?.name || 'server'}. Error: ${error.message}`);
 			
@@ -119,33 +129,20 @@
 				}
 			});
 			
-			// Example format of what we want: \"{\\\"spotifyClientId\\\":\\\"value\\\",\\\"spotifyClientSecret\\\":\\\"value\\\"}\"
-			// First create the proper JSON string
-			const jsonConfig = JSON.stringify(configFields);
-			
-			// Then apply the exact escaping pattern needed (one level of escaping for quotes)
-			const escapedJsonConfig = jsonConfig.replace(/"/g, '\\"');
-			
-			// Then wrap in quotes with exactly the right format
-			const configArgValue = `\"${escapedJsonConfig}\"`;
-			
-			// Build the server configs object
-			const serverConfigs = {
-				[server.id]: {
-					"command": "npx",
-					"args": [
-						"-y",
-						"@smithery/cli@latest",
-						"run",
-						server.qualifiedName || server.id,
-						"--config",
-						configArgValue
-					]
-				}
-			};
+			// Extract server name and qualified name
+			const serverName = server.name || server.id;
+			const servletSlug = server.qualifiedName || server.id;
 			
 			// Call API to add the server with configuration
-			await updateActiveMCPServers(serverConfigs, []);
+			// Pass the configFields directly instead of wrapped in a commandConfig
+			await addMCPServer(
+				serverName,         // name
+				servletSlug,        // servlet_slug
+				configFields,       // configSettings - DIRECT CONFIG VALUES, not commandConfig
+				{ enabled: true, domains: [] },  // networkSettings
+				{ enabled: true, volumes: {} },  // filesystemSettings
+				true                // allowUpdate
+			);
 			
 			// Show success message
 			toast.success(`Added ${server.name}`);

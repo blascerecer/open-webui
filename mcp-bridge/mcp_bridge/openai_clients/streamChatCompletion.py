@@ -63,7 +63,8 @@ async def chat_completions(request: CreateChatCompletionRequest):
         async with aconnect_sse(
             client, "post", "/chat/completions", content=json_data
         ) as event_source:
-            
+            logger.debug(f"response test2")
+
             # check if the content type is correct because the aiter_sse method
             # will raise an exception if the content type is not correct
             if "Content-Type" in event_source.response.headers:

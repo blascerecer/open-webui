@@ -1,63 +1,23 @@
-import { MCP_BRIDGE_API_BASE_URL } from '$lib/constants';
-
-interface MCPServerConfig {
-  command: string;
-  env: Record<string, string>;
-}
+import { MCP_RUN_PROFILE_NAME, MCP_RUN_PROFILE_ID, MCP_RUN_SESSION_ID, MCP_BRIDGE_API_BASE_URL } from '$lib/constants';
 
 /**
- * Smithery Registry Client
- * 
- * TypeScript functions to interact with the Smithery Registry API.
- * Allows developers to discover MCP servers that can be installed or integrated
- * into their applications.
+ * Gets the required MCP environment variables
+ * @returns Object containing required MCP environment variables
+ * @throws Error if any required variables are missing
  */
+const getMCPEnvironmentVars = () => {
+  const profileName = MCP_RUN_PROFILE_NAME;
+  const profileId = MCP_RUN_PROFILE_ID;
+  const sessionId = MCP_RUN_SESSION_ID;
+  
+  if (!profileName || !profileId || !sessionId) {
+    throw new Error('Missing required environment variables for MCP operations');
+  }
+  
+  return { profileName, profileId, sessionId };
+};
 
-// Server response interfaces based on the documentation
-interface ServerListResponse {
-  servers: Array<{
-    qualifiedName: string;
-    displayName: string;
-    description: string;
-    homepage: string;
-    useCount: string;
-    isDeployed: boolean;
-    createdAt: string;
-  }>;
-  pagination: {
-    currentPage: number;
-    pageSize: number;
-    totalPages: number;
-    totalCount: number;
-  };
-}
-
-interface ServerDetailsResponse {
-  qualifiedName: string;
-  displayName: string;
-  deploymentUrl: string;
-  connections: Array<{
-    type: string;
-    url?: string;
-    configSchema: any; // JSONSchema
-  }>;
-}
-
-interface SearchOptions {
-  query?: string;
-  owner?: string;
-  repo?: string;
-  isDeployed?: boolean;
-  page?: number;
-  pageSize?: number;
-}
-
-/**
- * Fetches MCP server names by calling the /mcp/tools endpoint
- * @param token Optional authentication token
- * @returns Array of MCP server names
- */
-export const getMCPServers = async (token: string = ''): Promise<string[]> => {
+export const getActiveTools = async (token: string = ''): Promise<any[]> => {
   let error = null;
   
   const res = await fetch(`${MCP_BRIDGE_API_BASE_URL}mcp/tools`, {
@@ -74,9 +34,6 @@ export const getMCPServers = async (token: string = ''): Promise<string[]> => {
       console.log('getMCPServers: ', json);
       return json;
     })
-    .then((json) => {
-      return json;
-    })
     .catch((err) => {
       error = err;
       console.log(err);
@@ -86,44 +43,115 @@ export const getMCPServers = async (token: string = ''): Promise<string[]> => {
   if (error) {
     throw error;
   }
+
+  console.log('getActiveTools: ', res);
   
-  // Extract server names (keys) from the response object
-  return Object.keys(res);
+  // Extract the tools array from the mcpx object
+  return res?.mcpx?.tools || [];
+};
+
+
+/**
+ * Fetches installed servlets on an MCP profile
+ * @param token Optional authentication token (not used if session ID is available)
+ * @returns Array of installed servlet names
+ */
+export const getActiveMCPServers = async (token: string = ''): Promise<string[]> => {
+  console.log('getActiveMCPServers: ', token);
+  try {
+    // Get environment variables
+    const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
+    
+    // Use the proxy path instead of direct URL
+    // This will route through your Vite dev server using the proxy configuration
+    const response = await fetch(`/mcp-api/profiles/${profileId}/${profileName}/installations`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json',
+        'Cookie': `api-key=${sessionId}`
+      }
+    });
+
+    console.log('getMCPServers: ', JSON.stringify(response, null, 2));
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      try {
+        const errorData = JSON.parse(errorText);
+        throw errorData;
+      } catch (parseError) {
+        throw new Error(`Failed to fetch MCP servlets: ${errorText.substring(0, 100)}...`);
+      }
+    }
+    
+    const installationData = await response.json();
+    console.log('getMCPServers: ', installationData);
+    
+    // Extract server names from the installation data
+    // Note: Adjust this extraction logic based on the actual response structure
+    return Array.isArray(installationData) 
+      ? installationData.map(installation => installation.name) 
+      : Object.keys(installationData);
+    
+  } catch (error) {
+    console.error('Error fetching MCP servers:', error);
+    throw error;
+  }
 };
 
 /**
  * Updates the MCP server configuration
- * @param serverConfigs Object containing server configurations where keys are server IDs and values are their configurations
- * @param serversToRemove Array of server IDs to remove
- * @returns Promise that resolves with the update result
+ * @param name Name of the installation
+ * @param servletSlug The slug of the servlet to install
+ * @param configSettings Configuration settings for the servlet
+ * @param networkSettings Network settings (domains)
+ * @param filesystemSettings Filesystem settings (volumes)
+ * @param allowUpdate Whether to allow updates to existing installations
+ * @returns Promise that resolves with the installation result
  */
-export const updateActiveMCPServers = async (
-  serverConfigs: Record<string, any> = {},
-  serversToRemove: string[] = []
+export const addMCPServer = async (
+  name: string,
+  servletSlug: string,
+  configSettings: Record<string, any> = {},
+  networkSettings: { enabled: boolean, domains: string[] } = { enabled: true, domains: [] },
+  filesystemSettings: { enabled: boolean, volumes: Record<string, string> } = { enabled: true, volumes: {} },
+  allowUpdate: boolean = true
 ): Promise<any> => {
   try {
+    // Get environment variables using the shared function
+    const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
+    
     // Log input parameters
     console.log('Function called with parameters:');
-    console.log('serverConfigs:', JSON.stringify(serverConfigs, null, 2));
-    console.log('serversToRemove:', serversToRemove);
-  
-    // Extract server IDs to add from the configs object
-    const serversToAdd = Object.keys(serverConfigs);
-    console.log('Servers to add:', serversToAdd);
+    console.log('name:', name);
+    console.log('servletSlug:', servletSlug);
+    console.log('configSettings:', JSON.stringify(configSettings, null, 2));
+    console.log('networkSettings:', JSON.stringify(networkSettings, null, 2));
+    console.log('filesystemSettings:', JSON.stringify(filesystemSettings, null, 2));
+    console.log('sessionid:', sessionId);
     
-    // Log request data before sending
-    const requestBody = { 
-      serversToAdd, 
-      serverConfigs: serverConfigs, // Make sure this matches the backend Pydantic model
-      serversToRemove 
+    // Prepare request body
+    const requestBody = {
+      name,
+      servlet_slug: servletSlug,
+      allow_update: allowUpdate,
+      settings: {
+        config: configSettings,
+        network: networkSettings,
+        filesystem: filesystemSettings
+      }
     };
-    console.log('Sending request to:', `${MCP_BRIDGE_API_BASE_URL}mcp/tools/servers/update`);
+    
+    // Use the proxy path instead of direct URL
+    console.log('Sending request to:', `/mcp-api/profiles/${profileId}/${profileName}/installations`);
     console.log('Request body:', JSON.stringify(requestBody, null, 2));
     
-    const response = await fetch(`${MCP_BRIDGE_API_BASE_URL}mcp/tools/servers/update`, {
+    const response = await fetch(`/mcp-api/profiles/${profileId}/${profileName}/installations`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+        'Cookie': `api-key=${sessionId}`
       },
       body: JSON.stringify(requestBody),
     });
@@ -137,95 +165,23 @@ export const updateActiveMCPServers = async (
       try {
         const errorData = JSON.parse(text);
         console.error('Parsed error data:', errorData);
-        throw new Error(errorData.detail || 'Failed to update MCP servers');
+        throw new Error(errorData.detail || 'Failed to install MCP servlet');
       } catch (parseError) {
         console.error('Failed to parse error response as JSON:', parseError);
-        throw new Error(`Failed to update MCP servers: ${text.substring(0, 100)}...`);
+        throw new Error(`Failed to install MCP servlet: ${text.substring(0, 100)}...`);
       }
     }
     
     const result = await response.json();
-    console.log('Update successful. Result data:', JSON.stringify(result, null, 2));
-    
-    // Process and handle server installation failures
-    if (result.changes && result.changes.installation_failed && result.changes.installation_failed.length > 0) {
-      console.warn('Some servers failed to install:', result.changes.installation_failed);
-      // You could add UI notifications here
-    }
-    
-    // Log any specific success metrics or important return values
-    if (result.changes) {
-      if (result.changes.added) console.log('Added servers:', result.changes.added);
-      if (result.changes.updated) console.log('Updated servers:', result.changes.updated);
-      if (result.changes.removed) console.log('Removed servers:', result.changes.removed);
-    }
+    console.log('Installation successful. Result data:', JSON.stringify(result, null, 2));
     
     return result;
   } catch (error) {
-    console.error('Exception caught while updating MCP server configuration:', error);
+    console.error('Exception caught while installing MCP servlet:', error);
     console.error('Error stack:', error.stack);
     throw error;
   }
 };
-
-/**
- * Fetches detailed information about a specific MCP server
- * 
- * @param qualifiedName The qualified name of the MCP server
- * @returns Promise resolving to the server details
- */
-export async function fetchMCPDetails(
-  qualifiedName: string
-): Promise<ServerDetailsResponse> {
-  // UPDATED: Use proxy path instead of direct API URL
-  const apiUrl = `/smithery-api/registry/servers/${encodeURIComponent(qualifiedName)}`;
-  
-  try {
-    console.log(`Fetching MCP details via proxy for: ${qualifiedName}`);
-    const response = await fetch(apiUrl, {
-      headers: {
-        'Accept': 'application/json',
-      }
-    });
-    
-    if (!response.ok) {
-      throw new Error(`Failed to fetch MCP details: ${response.status} ${response.statusText}`);
-    }
-    
-    return await response.json();
-    
-  } catch (error) {
-    console.error(`Error fetching details for MCP ${qualifiedName}:`, error);
-    
-    // Provide a fallback for Brave Search during development
-    if (qualifiedName === '@smithery-ai/brave-search') {
-      console.log('Using fallback data for Brave Search');
-      return {
-        qualifiedName: '@smithery-ai/brave-search',
-        displayName: 'Brave Search',
-        deploymentUrl: 'https://server.smithery.ai/@smithery-ai/brave-search',
-        connections: [
-          {
-            type: 'ws',
-            deploymentUrl: 'https://server.smithery.ai/@smithery-ai/brave-search',
-            configSchema: {
-              type: 'object',
-              required: ['braveApiKey'],
-              properties: {
-                braveApiKey: {
-                  type: 'string',
-                  description: 'The API key for the BRAVE Search server.'
-                }
-              }
-            }
-          }
-        ]
-      };
-    }
-    
-    throw error;
-  }
-}
 
 export async function refreshActiveMCPs({
   onStart = () => {},           // Callback when loading starts
@@ -238,7 +194,7 @@ export async function refreshActiveMCPs({
     onStart();
     
     // Fetch the MCP servers
-    const serverNames = await getMCPServers();
+    const serverNames = await getActiveMCPServers();
     console.log("Fetched server names:", serverNames);
     
     // Call success callback with the server names
@@ -282,21 +238,3 @@ export async function refreshActiveMCPs({
     onFinish();
   }
 }
-
-/**
- * Creates a WebSocket URL for connecting to a Smithery MCP server
- * 
- * @param serverUrl The base URL of the server
- * @param config Configuration object matching the server's schema
- * @returns Formatted WebSocket URL with encoded config
- */
-export function createSmitheryWebSocketUrl(
-  serverUrl: string,
-  config: Record<string, any>
-): string {
-  // Base64 encode the config object
-  const encodedConfig = btoa(JSON.stringify(config));
-  
-  // Format: https://server.smithery.ai/${qualifiedName}/ws?config=${base64encode(config)}
-  return `${serverUrl}?config=${encodedConfig}`;
-};

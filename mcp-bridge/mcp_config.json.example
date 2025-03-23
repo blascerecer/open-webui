@@ -1,3 +1,5 @@
 {
-  "mcpServers": {}
+  "mcpServers": {
+    "@smithery-ai/brave-search": {}
+  }
 }

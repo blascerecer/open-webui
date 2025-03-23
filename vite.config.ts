@@ -7,13 +7,21 @@ const corsPlugin = {
   name: 'cors-plugin',
   configureServer(server) {
     server.middlewares.use((req, res, next) => {
-      // Instead of wildcard, specify the exact origin
-      res.setHeader('Access-Control-Allow-Origin', 'http://localhost:5173');
+      // Allow requests from any origin in development mode
+      res.setHeader('Access-Control-Allow-Origin', '*');
       res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
       res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-      res.setHeader('Access-Control-Allow-Credentials', 'true');
-      res.setHeader('Cross-Origin-Opener-Policy', 'same-origin');
-      res.setHeader('Cross-Origin-Embedder-Policy', 'require-corp');
+      
+      // Note: When using wildcard '*' for origins, credentials cannot be true
+      // If you need credentials, you'll need to specify exact origins
+      
+      // Handle preflight OPTIONS requests
+      if (req.method === 'OPTIONS') {
+        res.statusCode = 204;
+        res.end();
+        return;
+      }
+      
       next();
     });
   }
@@ -63,6 +71,20 @@ export default defineConfig({
           proxy.options.cookieDomainRewrite = 'localhost';
           proxy.options.preserveHeaderKeyCase = true;
           proxy.options.selfHandleResponse = false;
+        }
+      },
+      // Add a proxy for the specific mcp.run endpoint
+      '/mcp-api': {
+        target: 'https://www.mcp.run',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/mcp-api/, '/api'),
+        configure: (proxy, _options) => {
+          proxy.on('error', (err, _req, _res) => {
+            console.log('MCP Proxy error:', err);
+          });
+          proxy.on('proxyReq', (proxyReq, req, _res) => {
+            console.log('Proxying MCP request:', req.method, req.url, '→', proxyReq.path);
+          });
         }
       },
       '/smithery-api/registry': {

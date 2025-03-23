@@ -27,6 +27,8 @@ async def chat_completion_add_tools(request: CreateChatCompletionRequest):
 async def call_tool(
     tool_call_name: str, tool_call_json: str, timeout: Optional[int] = None
 ) -> Optional[mcp.types.CallToolResult]:
+    logger.info(f"OpenAI client calling tool: {tool_call_name}")
+    
     if tool_call_name == "" or tool_call_name is None:
         logger.error("tool call name is empty")
         return None
@@ -43,8 +45,18 @@ async def call_tool(
 
     try:
         tool_call_args = json.loads(tool_call_json)
+        logger.info(f"Parsed arguments: {tool_call_args}")
     except json.JSONDecodeError:
         logger.error(f"failed to decode json for {tool_call_name}")
         return None
 
-    return await session.call_tool(tool_call_name, tool_call_args, timeout)
+    try:
+        logger.info(f"Calling tool with timeout: {timeout}")
+        result = await session.call_tool(tool_call_name, tool_call_args, timeout)
+        logger.info(f"Tool call completed with result: {result}")
+        return result
+    except Exception as e:
+        logger.error(f"Exception during tool call {tool_call_name}: {str(e)}")
+        import traceback
+        logger.error(traceback.format_exc())
+        return None
