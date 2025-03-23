@@ -79,24 +79,23 @@ export default defineConfig({
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/mcp-api/, '/api'),
         configure: (proxy, _options) => {
-          proxy.on('error', (err, _req, _res) => {
-            console.log('MCP Proxy error:', err);
-          });
           proxy.on('proxyReq', (proxyReq, req, _res) => {
-            console.log('Proxying MCP request:', req.method, req.url, '→', proxyReq.path);
-          });
-        }
-      },
-      '/smithery-api/registry': {
-        target: 'https://registry.smithery.ai',
-        changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/smithery-api\/registry/, ''),
-        configure: (proxy, _options) => {
-          proxy.on('error', (err, _req, _res) => {
-            console.log('Proxy error:', err);
-          });
-          proxy.on('proxyReq', (proxyReq, req, _res) => {
-            console.log('Proxying request:', req.method, req.url, '→', proxyReq.path);
+            // Import and use the getMCPEnvironmentVars function
+            try {
+              // We can't directly import the function, so we'll need to extract the values
+              // from environment variables or another source
+              const MCP_RUN_SESSION_ID = process.env.MCP_RUN_SESSION_ID || '';
+              
+              // Set the exact header that the API expects
+              if (MCP_RUN_SESSION_ID) {
+                proxyReq.setHeader('Cookie', `sessionId=${MCP_RUN_SESSION_ID}`);
+                console.log('Proxying request with Cookie:', `sessionId=${MCP_RUN_SESSION_ID}`);
+              } else {
+                console.warn('Missing MCP_RUN_SESSION_ID for proxy request');
+              }
+            } catch (error) {
+              console.error('Error setting proxy headers:', error);
+            }
           });
         }
       }

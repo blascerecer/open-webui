@@ -62,17 +62,17 @@ export const getActiveMCPServers = async (token: string = ''): Promise<string[]>
     // Get environment variables
     const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
     
-    // Use the proxy path instead of direct URL
-    // This will route through your Vite dev server using the proxy configuration
-    const response = await fetch(`/mcp-api/profiles/${profileId}/${profileName}/installations`, {
+    // Make request to the proxy URL instead of direct URL
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations`, {
       method: 'GET',
       headers: {
         Accept: 'application/json',
-        'Content-Type': 'application/json',
-        'Cookie': `api-key=${sessionId}`
-      }
+        'Content-Type': 'application/json'
+        // No need to set the sessionId cookie, the proxy will handle it
+      },
+      credentials: 'include' // Include cookies in the request
     });
-
+    
     console.log('getMCPServers: ', JSON.stringify(response, null, 2));
     
     if (!response.ok) {
@@ -89,7 +89,12 @@ export const getActiveMCPServers = async (token: string = ''): Promise<string[]>
     console.log('getMCPServers: ', installationData);
     
     // Extract server names from the installation data
-    // Note: Adjust this extraction logic based on the actual response structure
+    // Check if the response has an "installs" array (as shown in your example)
+    if (installationData.installs && Array.isArray(installationData.installs)) {
+      return installationData.installs.map(install => install.name);
+    }
+    
+    // Fallback to previous implementation for backward compatibility
     return Array.isArray(installationData) 
       ? installationData.map(installation => installation.name) 
       : Object.keys(installationData);
@@ -129,7 +134,6 @@ export const addMCPServer = async (
     console.log('configSettings:', JSON.stringify(configSettings, null, 2));
     console.log('networkSettings:', JSON.stringify(networkSettings, null, 2));
     console.log('filesystemSettings:', JSON.stringify(filesystemSettings, null, 2));
-    console.log('sessionid:', sessionId);
     
     // Prepare request body
     const requestBody = {
@@ -144,16 +148,16 @@ export const addMCPServer = async (
     };
     
     // Use the proxy path instead of direct URL
-    console.log('Sending request to:', `/mcp-api/profiles/${profileId}/${profileName}/installations`);
+    console.log('Sending request to:', `/mcp-api/profiles/${profileName}/${profileId}/installations`);
     console.log('Request body:', JSON.stringify(requestBody, null, 2));
     
-    const response = await fetch(`/mcp-api/profiles/${profileId}/${profileName}/installations`, {
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        'Cookie': `api-key=${sessionId}`
+        'Content-Type': 'application/json'
       },
       body: JSON.stringify(requestBody),
+      credentials: 'include' // This includes cookies in the request
     });
     
     console.log('Response status:', response.status);
@@ -178,6 +182,65 @@ export const addMCPServer = async (
     return result;
   } catch (error) {
     console.error('Exception caught while installing MCP servlet:', error);
+    console.error('Error stack:', error.stack);
+    throw error;
+  }
+};
+
+/**
+ * Removes an MCP server installation from a profile
+ * @param name Name of the installation to remove
+ * @returns Promise that resolves with the uninstallation result
+ */
+export const removeMCPServer = async (name: string): Promise<any> => {
+  try {
+    // Get environment variables using the shared function
+    const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
+    
+    // Log input parameters
+    console.log('Function called with parameters:');
+    console.log('name:', name);
+    
+    // Use the proxy path instead of direct URL
+    console.log('Sending request to:', `/mcp-api/profiles/${profileName}/${profileId}/installations/${name}`);
+    
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations/${name}`, {
+      method: 'DELETE',
+      headers: {
+        // Remove the Content-Type header since we're not sending a body
+        // 'Content-Type': 'application/json'
+      },
+      credentials: 'include' // This includes cookies in the request
+    });
+    
+    console.log('Response status:', response.status);
+    console.log('Response status text:', response.statusText);
+    
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('Error response body:', text);
+      try {
+        const errorData = JSON.parse(text);
+        console.error('Parsed error data:', errorData);
+        throw new Error(errorData.detail || errorData.message || 'Failed to uninstall MCP servlet');
+      } catch (parseError) {
+        console.error('Failed to parse error response as JSON:', parseError);
+        throw new Error(`Failed to uninstall MCP servlet: ${text.substring(0, 100)}...`);
+      }
+    }
+    
+    // For 204 No Content responses, just return success message
+    if (response.status === 204) {
+      console.log('Uninstallation successful. No content returned.');
+      return { success: true, message: 'Servlet uninstalled successfully' };
+    }
+    
+    const result = await response.json();
+    console.log('Uninstallation successful. Result data:', JSON.stringify(result, null, 2));
+    
+    return result;
+  } catch (error) {
+    console.error('Exception caught while uninstalling MCP servlet:', error);
     console.error('Error stack:', error.stack);
     throw error;
   }

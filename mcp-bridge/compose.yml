@@ -1,0 +1,21 @@
+services:
+  mcp-bridge:
+    build:
+      context: .
+    develop:
+      watch:
+        - path: mcp_bridge
+          action: rebuild
+    container_name: mcp-bridge
+    ports:
+      - "8000:8000"
+    environment:
+      - MCP_BRIDGE__CONFIG__FILE=config.json # mount the config file for this to work
+      - MCP_BRIDGE__MCP_CONFIG__FILE=mcp_config.json
+      - MCP_BRIDGE__CONFIG__JSON={"inference_server":{"base_url":"https://api.openai.com/v1","your-openai-api-key":""},"sampling":{"timeout":10,"models":[{"model":"llama3.2:latest","intelligence":0.5,"cost":0,"speed":0.6},{"model":"gpt-4o","intelligence":0.8,"cost":0.9,"speed":0.3}]}}
+      # - MCP_BRIDGE__CONFIG__HTTP_URL=http://0.0.0.0:8000/config.json
+      # - MCP_BRIDGE__MCP_CONFIG__HTTP_URL=http://0.0.0.0:8000/mcp_config.json
+    volumes:
+      - ./config.json:/mcp_bridge/config.json
+      - ./mcp_config.json:/mcp_bridge/mcp_config.json
+    restart: unless-stopped
