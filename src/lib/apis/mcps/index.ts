@@ -87,8 +87,68 @@ export const getMCPServers = async (token: string = ''): Promise<string[]> => {
     throw error;
   }
   
+<<<<<<< HEAD
   // Extract server names (keys) from the response object
   return Object.keys(res);
+=======
+  // Extract the tools array from the mcpx object
+  return res?.mcpx?.tools || [];
+};
+
+
+/**
+ * Fetches installed servlets on an MCP profile
+ * @param token Optional authentication token (not used if session ID is available)
+ * @returns Array of installed servlet names
+ */
+export const getActiveMCPServers = async (token: string = ''): Promise<string[]> => {
+  console.log('getActiveMCPServers: ', token);
+  try {
+    // Get environment variables
+    const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
+    
+    // Make request to the proxy URL instead of direct URL
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations`, {
+      method: 'GET',
+      headers: {
+        Accept: 'application/json',
+        'Content-Type': 'application/json'
+        // No need to set the sessionId cookie, the proxy will handle it
+      },
+      credentials: 'include' // Include cookies in the request
+    });
+    
+    console.log('getMCPServers: ', JSON.stringify(response, null, 2));
+    
+    if (!response.ok) {
+      const errorText = await response.text();
+      try {
+        const errorData = JSON.parse(errorText);
+        throw errorData;
+      } catch (parseError) {
+        throw new Error(`Failed to fetch MCP servlets: ${errorText.substring(0, 100)}...`);
+      }
+    }
+    
+    const installationData = await response.json();
+    console.log('getMCPServers: ', installationData);
+    
+    // Extract server names from the installation data
+    // Check if the response has an "installs" array (as shown in your example)
+    if (installationData.installs && Array.isArray(installationData.installs)) {
+      return installationData.installs.map(install => install.name);
+    }
+    
+    // Fallback to previous implementation for backward compatibility
+    return Array.isArray(installationData) 
+      ? installationData.map(installation => installation.name) 
+      : Object.keys(installationData);
+    
+  } catch (error) {
+    console.error('Error fetching MCP servers:', error);
+    throw error;
+  }
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
 };
 
 /**
@@ -104,12 +164,20 @@ export const updateActiveMCPServers = async (
   try {
     // Log input parameters
     console.log('Function called with parameters:');
+<<<<<<< HEAD
     console.log('serverConfigs:', JSON.stringify(serverConfigs, null, 2));
     console.log('serversToRemove:', serversToRemove);
   
     // Extract server IDs to add from the configs object
     const serversToAdd = Object.keys(serverConfigs);
     console.log('Servers to add:', serversToAdd);
+=======
+    console.log('name:', name);
+    console.log('servletSlug:', servletSlug);
+    console.log('configSettings:', JSON.stringify(configSettings, null, 2));
+    console.log('networkSettings:', JSON.stringify(networkSettings, null, 2));
+    console.log('filesystemSettings:', JSON.stringify(filesystemSettings, null, 2));
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
     
     // Log request data before sending
     const requestBody = { 
@@ -117,6 +185,7 @@ export const updateActiveMCPServers = async (
       serverConfigs: serverConfigs, // Make sure this matches the backend Pydantic model
       serversToRemove 
     };
+<<<<<<< HEAD
     console.log('Sending request to:', `${MCP_BRIDGE_API_BASE_URL}mcp/tools/servers/update`);
     console.log('Request body:', JSON.stringify(requestBody, null, 2));
     
@@ -124,8 +193,20 @@ export const updateActiveMCPServers = async (
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
+=======
+    
+    // Use the proxy path instead of direct URL
+    console.log('Sending request to:', `/mcp-api/profiles/${profileName}/${profileId}/installations`);
+    console.log('Request body:', JSON.stringify(requestBody, null, 2));
+    
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
       },
       body: JSON.stringify(requestBody),
+      credentials: 'include' // This includes cookies in the request
     });
     
     console.log('Response status:', response.status);
@@ -169,6 +250,7 @@ export const updateActiveMCPServers = async (
 };
 
 /**
+<<<<<<< HEAD
  * Fetches detailed information about a specific MCP server
  * 
  * @param qualifiedName The qualified name of the MCP server
@@ -226,6 +308,65 @@ export async function fetchMCPDetails(
     throw error;
   }
 }
+=======
+ * Removes an MCP server installation from a profile
+ * @param name Name of the installation to remove
+ * @returns Promise that resolves with the uninstallation result
+ */
+export const removeMCPServer = async (name: string): Promise<any> => {
+  try {
+    // Get environment variables using the shared function
+    const { profileName, profileId, sessionId } = getMCPEnvironmentVars();
+    
+    // Log input parameters
+    console.log('Function called with parameters:');
+    console.log('name:', name);
+    
+    // Use the proxy path instead of direct URL
+    console.log('Sending request to:', `/mcp-api/profiles/${profileName}/${profileId}/installations/${name}`);
+    
+    const response = await fetch(`/mcp-api/profiles/${profileName}/${profileId}/installations/${name}`, {
+      method: 'DELETE',
+      headers: {
+        // Remove the Content-Type header since we're not sending a body
+        // 'Content-Type': 'application/json'
+      },
+      credentials: 'include' // This includes cookies in the request
+    });
+    
+    console.log('Response status:', response.status);
+    console.log('Response status text:', response.statusText);
+    
+    if (!response.ok) {
+      const text = await response.text();
+      console.error('Error response body:', text);
+      try {
+        const errorData = JSON.parse(text);
+        console.error('Parsed error data:', errorData);
+        throw new Error(errorData.detail || errorData.message || 'Failed to uninstall MCP servlet');
+      } catch (parseError) {
+        console.error('Failed to parse error response as JSON:', parseError);
+        throw new Error(`Failed to uninstall MCP servlet: ${text.substring(0, 100)}...`);
+      }
+    }
+    
+    // For 204 No Content responses, just return success message
+    if (response.status === 204) {
+      console.log('Uninstallation successful. No content returned.');
+      return { success: true, message: 'Servlet uninstalled successfully' };
+    }
+    
+    const result = await response.json();
+    console.log('Uninstallation successful. Result data:', JSON.stringify(result, null, 2));
+    
+    return result;
+  } catch (error) {
+    console.error('Exception caught while uninstalling MCP servlet:', error);
+    console.error('Error stack:', error.stack);
+    throw error;
+  }
+};
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
 
 export async function refreshActiveMCPs({
   onStart = () => {},           // Callback when loading starts

@@ -21,8 +21,13 @@
 	import MCPConfigModal from '../MCPConfigModal.svelte';
 	
 	// Import the JSON file directly
+<<<<<<< HEAD
 	import serverData from '$lib/utils/smithery-servers.json';
 	import { getMCPServers, updateActiveMCPServers, refreshActiveMCPs } from '$lib/apis/mcps';
+=======
+	import serverData from '$lib/utils/mcprun-servers.json';
+	import { addMCPServer, removeMCPServer, refreshActiveMCPs } from '$lib/apis/mcps';
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
 
 	const i18n = getContext('i18n');
 	const dispatch = createEventDispatcher();
@@ -62,11 +67,14 @@
 	let selectedServer = null;
 	
 	$: selectedItems = items.filter((item) => values.includes(item.value));
+	$: dynamicPlaceholder = activeMCPs.length > 0 
+		? `${activeMCPs.length} MCP${activeMCPs.length > 1 ? 's' : ''} Selected`
+		: 'Select MCPs';
 	$: displayText = selectedItems.length > 0 
 		? selectedItems.length === 1 
 			? selectedItems[0].label 
 			: `${selectedItems.length} servers selected`
-		: placeholder;
+		: dynamicPlaceholder;
 
 	$: filteredItems = searchValue
 		? items.filter(item => 
@@ -117,10 +125,39 @@
 	 */
 	async function editMCP(mcpValue) {
 		try {
-			// Get the MCP item
-			const mcpItem = items.find(item => item.value === mcpValue);
+			// Get the MCP item - try multiple ways to find a matching item
+			let mcpItem = items.find(item => 
+				item.value === mcpValue || 
+				item.label === mcpValue || 
+				item.qualifiedName === mcpValue ||
+				(mcpValue === 'brave-search' && 
+					(item.value.includes('brave-search') || 
+					 item.qualifiedName.includes('brave-search')))
+			);
+			
+			// If no matching item found, create a basic one
 			if (!mcpItem) {
-				throw new Error(`MCP with value ${mcpValue} not found`);
+				mcpItem = {
+					label: mcpValue,
+					value: mcpValue,
+					qualifiedName: mcpValue,
+					description: `${mcpValue} configuration`,
+					config: {}
+				};
+				
+				// Try to find an item with similar name for brave-search specifically
+				if (mcpValue === 'brave-search') {
+					const braveItem = items.find(item => 
+						item.value.includes('brave-search') || 
+						item.qualifiedName.includes('brave-search')
+					);
+					if (braveItem) {
+						mcpItem = {
+							...braveItem,
+							value: mcpValue, // Use the actual MCP name
+						};
+					}
+				}
 			}
 			
 			// Close the dropdown before showing the modal
@@ -131,12 +168,23 @@
 			
 			// Prepare server object for the modal
 			selectedServer = {
+<<<<<<< HEAD
 				id: mcpItem.qualifiedName,
 				name: mcpItem.label,
 				description: mcpItem.description,
 				qualifiedName: mcpItem.qualifiedName,
 				url: mcpItem.url,
 				config: mcpItem.config || {} // Ensure config exists
+=======
+				id: mcpItem.qualifiedName || mcpValue,
+				name: mcpItem.label || mcpValue,
+				description: mcpItem.description || `${mcpValue} configuration`,
+				qualifiedName: mcpItem.qualifiedName || mcpValue,
+				url: mcpItem.url || '',
+				config: mcpItem.config || {}, // Ensure config exists
+				requiredConfigs: requiredConfigs, // Pass the required configs
+				meta: mcpItem.meta || {} // Pass all meta information
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
 			};
 			
 			console.log("editMCP Selected server:", selectedServer);
@@ -154,20 +202,39 @@
 	 */
 	async function removeMCP(mcpValue) {
 		try {
-			// Get the MCP item
-			const mcpItem = items.find(item => item.value === mcpValue);
-			if (!mcpItem) {
-				throw new Error(`MCP with value ${mcpValue} not found`);
-			}
+			// Get the MCP item - try multiple ways to find a matching item
+			let mcpItem = items.find(item => 
+				item.value === mcpValue || 
+				item.label === mcpValue || 
+				item.qualifiedName === mcpValue ||
+				(mcpValue === 'brave-search' && 
+					(item.value.includes('brave-search') || 
+					 item.qualifiedName.includes('brave-search')))
+			);
 			
+<<<<<<< HEAD
 			// Update server configuration
 			await updateActiveMCPServers({}, [mcpValue]);
+=======
+			// If no matching item found, create a basic one
+			if (!mcpItem) {
+				mcpItem = {
+					label: mcpValue,
+					value: mcpValue,
+					qualifiedName: mcpValue,
+					description: `${mcpValue} configuration`
+				};
+			}
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
 			
 			// Close the dropdown before showing the toast
 			show = false;
 			
+			// Call the removeMCPServer function to uninstall the server
+			await removeMCPServer(mcpValue);
+			
 			// Show success toast
-			toast.success(`Removed ${mcpItem.label}`);
+			toast.success(`Removed ${mcpItem.label || mcpValue}`);
 			
 			// Refresh to update UI
 			await handleRefreshMCPs();
@@ -179,7 +246,7 @@
 			});
 		} catch (err) {
 			console.error(`Failed to remove MCP ${mcpValue}:`, err);
-			toast.error(`Failed to remove server`);
+			toast.error(`Failed to remove server: ${err.message || 'Unknown error'}`);
 		}
 	}
 
@@ -257,22 +324,55 @@
 				}
 			});
 			
-			// Update component state with the server names
-			activeMCPs = [...serverNames];
+			console.log("Refreshed active MCPs:", serverNames);
 			
-			// Update the active status of items - match by value
-			items = items.map(item => ({
-				...item,
-				isActive: serverNames.includes(item.value)
-			}));
+			// Update component state with the server names
+			activeMCPs = serverNames || [];
+			
+			// Important: Add any missing servers to the items array
+			// This ensures we can display servers that might not be in the initial items list
+			serverNames.forEach(serverName => {
+				if (!items.some(item => item.value === serverName || item.label === serverName)) {
+					// Create a basic item for this server
+					items = [...items, {
+						label: serverName,
+						value: serverName,
+						qualifiedName: serverName,
+						description: `Automatically added ${serverName}`,
+						isActive: true
+					}];
+				}
+			});
+			
+			// Update the active status of items - try multiple matching strategies
+			items = items.map(item => {
+				// Check if this item matches any active server by value, label, or qualified name
+				const isActive = serverNames.some(name => 
+					item.value === name || 
+					item.label === name || 
+					item.qualifiedName === name ||
+					// For 'brave-search' specifically
+					(name === 'brave-search' && 
+						(item.value.includes('brave-search') || 
+						 item.qualifiedName.includes('brave-search')))
+				);
+				
+				return {
+					...item,
+					isActive
+				};
+			});
+			
+			// Log which items are now active
+			console.log("Active items after refresh:", items.filter(i => i.isActive).map(i => i.label));
 			
 			// Get the values (IDs) of active servers
 			values = [...serverNames];
 			
 			dispatch('activeChange', { activeMCPs });
 		} catch (err) {
+			console.error("Error refreshing MCPs:", err);
 			// Error already handled by onError callback
-			// Any additional error handling can go here
 		} finally {
 			loadingActiveMCPs = false;
 		}
@@ -381,7 +481,7 @@
 			{/if}
 
 			<!-- Active MCPs section - only shown if there are active servers -->
-			{#if !isLoading && !loadingActiveMCPs && !loadingError && activeMCPs.length > 0}
+			{#if !isLoading && !loadingActiveMCPs && !loadingError}
 				<div class="pt-3 mb-1">
 					<div class="px-5 py-1 text-sm font-medium text-gray-700 dark:text-gray-200">
 						Active MCPs:
@@ -390,80 +490,95 @@
 					<div class="px-5 py-2 space-y-2">
 						{#each activeMCPs as mcpName}
 							<!-- Find the corresponding item to get its label -->
-							{@const mcpItem = items.find(item => item.value === mcpName)}
-							{#if mcpItem}
-								<div class="flex items-center justify-between p-2 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
-									<div class="flex items-center space-x-2">
-										<!-- Server icon -->
-										<div class="rounded-full flex items-center">
-											{#if mcpItem.icon}
-												<mcpItem.icon class="size-5" />
-											{:else}
-												<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5">
-													<rect width="18" height="18" x="3" y="3" rx="2" />
-													<path d="M7 10h10" />
-													<path d="M7 14h10" />
-												</svg>
-											{/if}
-										</div>
-										
-										<!-- Server name and optional popularity badge -->
-										<div class="flex items-center">
-											<span class="text-sm font-medium text-blue-700 dark:text-blue-300">{mcpItem.label}</span>
-											
-											{#if mcpItem.popularity}
-												<div class="ml-2 text-xs px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-blue-600 dark:text-blue-300">
-													{mcpItem.popularity}
-												</div>
-											{/if}
-											
-											{#if mcpItem.description}
-												<Tooltip content={mcpItem.description}>
-													<div class="ml-2 translate-y-[1px]">
-														<svg
-															xmlns="http://www.w3.org/2000/svg"
-															fill="none"
-															viewBox="0 0 24 24"
-															stroke-width="1.5"
-															stroke="currentColor"
-															class="w-4 h-4"
-														>
-															<path
-																stroke-linecap="round"
-																stroke-linejoin="round"
-																d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
-															/>
-														</svg>
-													</div>
-												</Tooltip>
-											{/if}
-										</div>
+							{@const mcpItem = items.find(item => 
+								item.value === mcpName || 
+								item.label === mcpName ||
+								item.qualifiedName === mcpName ||
+								(mcpName === 'brave-search' && item.value.includes('brave-search'))
+							)}
+							
+							<!-- Display the MCP with item data if found, or with fallback display if not found -->
+							<div class="flex items-center justify-between p-2 rounded-lg bg-blue-50 dark:bg-blue-950 border border-blue-200 dark:border-blue-800">
+								<div class="flex items-center space-x-2">
+									<!-- Server icon -->
+									<div class="rounded-full flex items-center">
+										{#if mcpItem?.icon}
+											<mcpItem.icon class="size-5" />
+										{:else}
+											<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="size-5">
+												<rect width="18" height="18" x="3" y="3" rx="2" />
+												<path d="M7 10h10" />
+												<path d="M7 14h10" />
+											</svg>
+										{/if}
 									</div>
 									
-									<!-- Action buttons -->
-									<div class="flex items-center space-x-1">
-										<!-- Edit button -->
-										<Tooltip content="Edit">
-											<button
-												class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-1 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/20"
-												on:click={() => editMCP(mcpItem.value)}
-											>
-												<EditIcon class="size-4" />
-											</button>
-										</Tooltip>
+									<!-- Server name and optional popularity badge -->
+									<div class="flex items-center">
+										<!-- Use the item label if available, otherwise use the mcpName -->
+										<span class="text-sm font-medium text-blue-700 dark:text-blue-300">
+											{mcpItem?.label || mcpName}
+										</span>
 										
-										<!-- Remove button -->
-										<Tooltip content="Remove">
-											<button
-												class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20"
-												on:click={() => removeMCP(mcpItem.value)}
-											>
-												<MinusIcon class="size-4" />
-											</button>
-										</Tooltip>
+										{#if mcpItem?.popularity}
+											<div class="ml-2 text-xs px-1.5 py-0.5 bg-blue-100 dark:bg-blue-900 rounded text-blue-600 dark:text-blue-300">
+												{mcpItem.popularity}
+											</div>
+										{/if}
+										
+										{#if mcpItem?.description}
+											<Tooltip content={mcpItem.description}>
+												<div class="ml-2 translate-y-[1px]">
+													<svg
+														xmlns="http://www.w3.org/2000/svg"
+														fill="none"
+														viewBox="0 0 24 24"
+														stroke-width="1.5"
+														stroke="currentColor"
+														class="w-4 h-4"
+													>
+														<path
+															stroke-linecap="round"
+															stroke-linejoin="round"
+															d="m11.25 11.25.041-.02a.75.75 0 0 1 1.063.852l-.708 2.836a.75.75 0 0 0 1.063.853l.041-.021M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9-3.75h.008v.008H12V8.25Z"
+														/>
+													</svg>
+												</div>
+											</Tooltip>
+										{/if}
+										
+										<!-- Show extra server details if available -->
+										{#if mcpName === 'brave-search' || mcpItem?.config?.['api-key']}
+											<div class="ml-2 text-xs px-1.5 py-0.5 bg-green-100 dark:bg-green-900 rounded text-green-600 dark:text-green-300">
+												API Key: {mcpItem?.config?.['api-key'] || 'Configured'}
+											</div>
+										{/if}
 									</div>
 								</div>
-							{/if}
+								
+								<!-- Action buttons -->
+								<div class="flex items-center space-x-1">
+									<!-- Edit button -->
+									<Tooltip content="Edit">
+										<button
+											class="text-blue-500 hover:text-blue-700 dark:text-blue-400 dark:hover:text-blue-300 p-1 rounded-full hover:bg-blue-100 dark:hover:bg-blue-900/20"
+											on:click={() => editMCP(mcpName)}
+										>
+											<EditIcon class="size-4" />
+										</button>
+									</Tooltip>
+									
+									<!-- Remove button -->
+									<Tooltip content="Remove">
+										<button
+											class="text-red-500 hover:text-red-700 dark:text-red-400 dark:hover:text-red-300 p-1 rounded-full hover:bg-red-100 dark:hover:bg-red-900/20"
+											on:click={() => removeMCP(mcpName)}
+										>
+											<MinusIcon class="size-4" />
+										</button>
+									</Tooltip>
+								</div>
+							</div>
 						{/each}
 					</div>
 					<hr class="my-2 border-gray-100 dark:border-gray-800" />
@@ -510,7 +625,14 @@
 			</div>
 			
 			<div class="px-3 mb-4 max-h-64 overflow-y-auto scrollbar-hidden group relative">
-				{#each filteredItems.filter(item => !activeMCPs.includes(item.value)) as item, index}
+				{#each filteredItems.filter(item => !activeMCPs.some(activeMcp => 
+					activeMcp === item.value || 
+					activeMcp === item.label || 
+					activeMcp === item.qualifiedName ||
+					(activeMcp === 'brave-search' && 
+						(item.value.includes('brave-search') || 
+						 item.qualifiedName.includes('brave-search')))
+				)) as item, index}
 					<div
 						class="flex w-full text-left font-medium select-none items-center justify-between rounded-button py-2 pl-3 pr-1.5 text-sm text-gray-700 dark:text-gray-100 outline-hidden transition-all duration-75 hover:bg-gray-100 dark:hover:bg-gray-800 rounded-lg cursor-pointer data-highlighted:bg-muted {index === selectedItemIdx ? 'bg-gray-100 dark:bg-gray-800 group-hover:bg-transparent' : ''}"
 						data-mcp-selected={index === selectedItemIdx}

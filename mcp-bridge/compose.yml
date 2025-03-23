@@ -12,7 +12,11 @@ services:
     environment:
       - MCP_BRIDGE__CONFIG__FILE=config.json # mount the config file for this to work
       - MCP_BRIDGE__MCP_CONFIG__FILE=mcp_config.json
+<<<<<<< HEAD
       - MCP_BRIDGE__CONFIG__JSON={"inference_server":{"base_url":"https://api.openai.com/v1","your-api-key":""},"sampling":{"timeout":10,"models":[{"model":"llama3.2:latest","intelligence":0.5,"cost":0,"speed":0.6},{"model":"gpt-4o","intelligence":0.8,"cost":0.9,"speed":0.3}]}}
+=======
+      - MCP_BRIDGE__CONFIG__JSON={"inference_server":{"base_url":"https://api.openai.com/v1","your-openai-api-key":""},"sampling":{"timeout":10,"models":[{"model":"llama3.2:latest","intelligence":0.5,"cost":0,"speed":0.6},{"model":"gpt-4o","intelligence":0.8,"cost":0.9,"speed":0.3}]}}
+>>>>>>> 01353ee03 (gadd functionality for mcp.run to work with webui)
       # - MCP_BRIDGE__CONFIG__HTTP_URL=http://0.0.0.0:8000/config.json
       # - MCP_BRIDGE__MCP_CONFIG__HTTP_URL=http://0.0.0.0:8000/mcp_config.json
     volumes:
