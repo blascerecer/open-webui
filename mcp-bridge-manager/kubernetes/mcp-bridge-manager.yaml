@@ -1,0 +1,120 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mcp-bridge-manager
+  labels:
+    app: mcp-bridge-manager
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: mcp-bridge-manager
+  template:
+    metadata:
+      labels:
+        app: mcp-bridge-manager
+    spec:
+      serviceAccountName: mcp-bridge-manager
+      containers:
+      - name: mcp-bridge-manager
+        image: gcr.io/blagent-prod/mcp-bridge-manager:latest
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 8081
+        env:
+        - name: NAMESPACE
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.namespace
+        - name: MCP_BRIDGE_IMAGE
+          value: "ghcr.io/secretiveshell/mcp-bridge/mcp-bridge:0.1.0"
+        - name: CORS_ORIGINS
+          value: "*"  # Update this to be more restrictive in production
+        resources:
+          requests:
+            memory: "256Mi"
+            cpu: "100m"
+          limits:
+            memory: "512Mi"
+            cpu: "200m"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 8081
+          initialDelaySeconds: 30
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 8081
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: mcp-bridge-manager-service
+  labels:
+    app: mcp-bridge-manager
+spec:
+  selector:
+    app: mcp-bridge-manager
+  ports:
+  - port: 8081
+    targetPort: 8081
+  type: ClusterIP
+---
+# Service account with permissions to create/delete MCP Bridge instances
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: mcp-bridge-manager
+---
+# Role with permissions to manage MCP Bridge deployments
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: mcp-bridge-manager-role
+rules:
+- apiGroups: ["apps"]
+  resources: ["deployments"]
+  verbs: ["get", "list", "create", "update", "delete", "patch"]
+- apiGroups: [""]
+  resources: ["services", "configmaps", "secrets"]
+  verbs: ["get", "list", "create", "update", "delete", "patch"]
+---
+# Role binding to connect service account with role
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: mcp-bridge-manager-rolebinding
+subjects:
+- kind: ServiceAccount
+  name: mcp-bridge-manager
+roleRef:
+  kind: Role
+  name: mcp-bridge-manager-role
+  apiGroup: rbac.authorization.k8s.io
+---
+# Network policy to secure communication
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: mcp-bridge-manager-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: mcp-bridge-manager
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - podSelector:
+        matchLabels:
+          app: open-webui
+    ports:
+    - protocol: TCP
+      port: 8081
+  egress:
+  - to: []  # Allow Kubernetes API access

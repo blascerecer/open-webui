@@ -1,0 +1,77 @@
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: mcp-bridge-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: mcp-bridge  # Matches all MCP Bridge instances
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  # Allow incoming traffic from Open WebUI
+  - from:
+    - podSelector:
+        matchLabels:
+          app: open-webui
+    ports:
+    - protocol: TCP
+      port: 9090
+  # Allow incoming traffic from MCP Bridge Manager
+  - from:
+    - podSelector:
+        matchLabels:
+          app: mcp-bridge-manager
+    ports:
+    - protocol: TCP
+      port: 9090
+  egress:
+  # Allow outgoing traffic to external APIs
+  - to:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+        except:
+        - 10.0.0.0/8
+        - 172.16.0.0/12
+        - 192.168.0.0/16
+    ports:
+    - protocol: TCP
+      port: 443  # HTTPS
+---
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: open-webui-network-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: open-webui
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  # Allow incoming traffic from users
+  - from:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+    ports:
+    - protocol: TCP
+      port: 8080
+  egress:
+  # Allow outgoing traffic to MCP Bridge Manager
+  - to:
+    - podSelector:
+        matchLabels:
+          app: mcp-bridge-manager
+    ports:
+    - protocol: TCP
+      port: 8081
+  # Allow outgoing traffic to MCP Bridge instances
+  - to:
+    - podSelector:
+        matchLabels:
+          app: mcp-bridge
+    ports:
+    - protocol: TCP
+      port: 9090

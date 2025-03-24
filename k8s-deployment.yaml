@@ -25,6 +25,9 @@ spec:
           value: "8080"
         - name: ENV
           value: "prod"
+        # Added environment variable to connect to MCP Bridge Manager
+        - name: MCP_BRIDGE_MANAGER_URL
+          value: "http://mcp-bridge-manager-service:8081"
         resources:
           requests:
             memory: "1Gi"
@@ -62,3 +65,38 @@ spec:
   - port: 80
     targetPort: 8080
   type: LoadBalancer
+---
+# Network Policy to secure communication
+apiVersion: networking.k8s.io/v1
+kind: NetworkPolicy
+metadata:
+  name: open-webui-policy
+spec:
+  podSelector:
+    matchLabels:
+      app: open-webui
+  policyTypes:
+  - Ingress
+  - Egress
+  ingress:
+  - from:
+    - ipBlock:
+        cidr: 0.0.0.0/0
+    ports:
+    - protocol: TCP
+      port: 8080
+  egress:
+  - to:
+    - podSelector:
+        matchLabels:
+          app: mcp-bridge-manager
+    ports:
+    - protocol: TCP
+      port: 8081
+  - to:
+    - podSelector:
+        matchLabels:
+          app.kubernetes.io/name: mcp-bridge  # Allows connection to any MCP Bridge
+    ports:
+    - protocol: TCP
+      port: 9090
